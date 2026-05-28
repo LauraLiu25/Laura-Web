@@ -18,6 +18,22 @@ const messageText = document.querySelector("#messageText");
 const messageStatus = document.querySelector("#messageStatus");
 const messageSendBtn = document.querySelector(".message-send");
 const MESSAGE_API_URL = window.MESSAGE_API_URL || "/api/message";
+const RESUME_PDF_URL = "assets/downloads/resume-liu-hongsuo.pdf";
+const RESUME_DOWNLOAD_NAME = "刘红锁-哈尔滨理工大学硕士-2027届.pdf";
+const resumeDownloadBtn = document.querySelector("#resumeDownloadBtn");
+
+resumeDownloadBtn?.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.open(RESUME_PDF_URL, "_blank", "noopener,noreferrer");
+  const link = document.createElement("a");
+  link.href = RESUME_PDF_URL;
+  link.download = RESUME_DOWNLOAD_NAME;
+  link.rel = "noopener";
+  link.hidden = true;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+});
 
 const cardOrder = ["ai", "product", "language", "analysis"];
 let activeCard = "ai";
@@ -565,6 +581,17 @@ function syncEducationTimelineAxis() {
   rails.forEach((rail) => {
     rail.style.setProperty("--edu-rail-dot-x", `${railAxisX}px`);
   });
+
+  const bachelorCard = timeline.querySelector('[data-node="bachelor"] .edu-card');
+  const masterCard = timeline.querySelector('[data-node="master"] .edu-card');
+  if (bachelorCard && masterCard) {
+    const bachelorRect = bachelorCard.getBoundingClientRect();
+    const masterRect = masterCard.getBoundingClientRect();
+    const axisTop = bachelorRect.top - timelineRect.top;
+    const axisHeight = masterRect.bottom - bachelorRect.top;
+    timeline.style.setProperty("--edu-axis-top", `${Math.max(0, axisTop)}px`);
+    timeline.style.setProperty("--edu-axis-height", `${Math.max(0, axisHeight)}px`);
+  }
 }
 
 function updateAllTimelineLines() {
