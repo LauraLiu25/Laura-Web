@@ -1,0 +1,8 @@
+# 密钥与依赖（切勿提交）
+ai-matcher/.env
+ai-matcher/node_modules/
+
+# 系统
+.DS_Store
+Thumbs.db
+desktop.ini
