@@ -1,0 +1,321 @@
+{
+  "siteMapVersion": "2026-05-27",
+  "navigation": [
+    {
+      "label": "首页",
+      "anchor": "#home",
+      "purpose": "展示候选人定位、下载简历、使用AI岗位匹配器",
+      "bestFor": [
+        "快速了解候选人",
+        "下载PDF简历",
+        "粘贴JD做匹配分析"
+      ],
+      "buttonTextExamples": [
+        "回到首页",
+        "下载简历"
+      ]
+    },
+    {
+      "label": "关于我",
+      "anchor": "#about",
+      "purpose": "展示候选人的底层工作方式、价值观、商业逻辑和用户体验关注点",
+      "bestFor": [
+        "判断候选人的自我定位",
+        "了解产品与运营思维",
+        "了解长期主义、敏捷和数据意识"
+      ],
+      "buttonTextExamples": [
+        "查看个人介绍",
+        "了解工作方式"
+      ]
+    },
+    {
+      "label": "关于我 · 技能卡片",
+      "anchor": "#about-skills",
+      "purpose": "展示AI应用、产品与效率、语言与资质、数据分析等能力卡片",
+      "bestFor": [
+        "AI工具链",
+        "产品工具",
+        "数据分析工具",
+        "语言和资质证明"
+      ],
+      "buttonTextExamples": [
+        "查看技能卡片",
+        "查看AI应用能力",
+        "查看数据分析能力"
+      ]
+    },
+    {
+      "label": "教育经历",
+      "anchor": "#education",
+      "purpose": "展示本科、支教、硕士三个阶段的积累和可展开详情",
+      "bestFor": [
+        "会计学与工商管理背景",
+        "奖学金与荣誉",
+        "竞赛经历",
+        "支教经历与责任感",
+        "硕士阶段AI实践与商业研究"
+      ],
+      "buttonTextExamples": [
+        "查看教育经历",
+        "查看本科与硕士积累",
+        "查看竞赛和荣誉"
+      ]
+    },
+    {
+      "label": "工作经历",
+      "anchor": "#work-experience",
+      "purpose": "展示天职国际审计实习经历，包括内控测试、审计底稿编制、集团合并底稿编制",
+      "bestFor": [
+        "财务分析岗位",
+        "审计岗位",
+        "内控与风控岗位",
+        "需要严谨数据核对能力的岗位",
+        "财务数字化相关岗位"
+      ],
+      "buttonTextExamples": [
+        "查看审计实习",
+        "查看财务与数据严谨性",
+        "查看工作经历"
+      ]
+    },
+    {
+      "label": "项目经历 · CareerMod",
+      "anchor": "#projects",
+      "purpose": "展示AI面试辅助求职平台CareerMod的产品设计、全栈开发和AI应用落地",
+      "bestFor": [
+        "AI产品经理",
+        "大模型应用产品",
+        "招聘/求职产品",
+        "从0到1产品",
+        "全栈产品实践"
+      ],
+      "buttonTextExamples": [
+        "查看CareerMod",
+        "查看AI产品项目",
+        "查看求职产品闭环"
+      ]
+    },
+    {
+      "label": "项目经历 · 企业管理创新大赛",
+      "anchor": "#project-competition",
+      "purpose": "展示极因造物Aegle X项目，体现AI+合成生物学、商业模式设计、商业计划书撰写、财务预测、风险管理和国家级一等奖成果",
+      "bestFor": [
+        "商业模式设计",
+        "AI+生物科技",
+        "合成生物学",
+        "商业计划书",
+        "财务预测",
+        "风险管理",
+        "客户细分与价值主张",
+        "路演表达",
+        "项目负责人经历"
+      ],
+      "buttonTextExamples": [
+        "查看Aegle X项目",
+        "查看商业模式设计",
+        "查看国家级一等奖项目"
+      ]
+    },
+    {
+      "label": "项目经历 · 宇树科技案例",
+      "anchor": "#project-unitree",
+      "purpose": "展示宇树科技战略转型教学案例，体现具身智能行业研究、战略管理理论应用、IPO与财务数据分析、案例写作和咨询式表达能力",
+      "bestFor": [
+        "战略分析",
+        "行业研究",
+        "具身智能",
+        "机器人行业",
+        "案例研究",
+        "教学案例",
+        "IPO分析",
+        "财务数据分析",
+        "动态能力理论",
+        "管理咨询",
+        "商业分析"
+      ],
+      "buttonTextExamples": [
+        "查看宇树案例",
+        "查看战略分析项目",
+        "查看具身智能研究",
+        "查看案例研究能力"
+      ]
+    },
+    {
+      "label": "更多",
+      "anchor": "#more",
+      "purpose": "展示联系方式、Github、小红书和留言板",
+      "bestFor": [
+        "联系候选人",
+        "查看线上项目",
+        "查看AI产品探索笔记",
+        "留言互动"
+      ],
+      "buttonTextExamples": [
+        "联系我",
+        "查看Github",
+        "查看小红书"
+      ]
+    }
+  ],
+  "matchingToNavigationRules": [
+    {
+      "jdSignal": [
+        "AI产品",
+        "大模型",
+        "智能体",
+        "Prompt",
+        "招聘产品",
+        "求职产品",
+        "用户流程"
+      ],
+      "primaryAnchors": [
+        "#projects",
+        "#about-skills"
+      ],
+      "analysisButtonText": [
+        "查看CareerMod",
+        "查看AI应用能力"
+      ]
+    },
+    {
+      "jdSignal": [
+        "产品经理",
+        "需求分析",
+        "原型",
+        "PRD",
+        "用户体验",
+        "流程设计"
+      ],
+      "primaryAnchors": [
+        "#about",
+        "#about-skills",
+        "#projects"
+      ],
+      "analysisButtonText": [
+        "查看个人介绍",
+        "查看产品与效率能力",
+        "查看CareerMod"
+      ]
+    },
+    {
+      "jdSignal": [
+        "数据分析",
+        "SQL",
+        "Python",
+        "Excel",
+        "指标",
+        "可视化",
+        "经营分析"
+      ],
+      "primaryAnchors": [
+        "#about-skills",
+        "#work-experience",
+        "#project-unitree"
+      ],
+      "analysisButtonText": [
+        "查看数据分析能力",
+        "查看审计实习",
+        "查看宇树案例"
+      ]
+    },
+    {
+      "jdSignal": [
+        "财务",
+        "审计",
+        "内控",
+        "风控",
+        "报表",
+        "合并底稿",
+        "财务数字化"
+      ],
+      "primaryAnchors": [
+        "#work-experience",
+        "#education",
+        "#about-skills"
+      ],
+      "analysisButtonText": [
+        "查看工作经历",
+        "查看教育背景",
+        "查看数据分析能力"
+      ]
+    },
+    {
+      "jdSignal": [
+        "战略",
+        "行业研究",
+        "商业分析",
+        "咨询",
+        "案例研究",
+        "机器人",
+        "具身智能",
+        "IPO",
+        "财务数据",
+        "动态能力",
+        "教学案例",
+        "战略管理"
+      ],
+      "primaryAnchors": [
+        "#project-unitree",
+        "#project-competition",
+        "#about"
+      ],
+      "analysisButtonText": [
+        "查看宇树案例",
+        "查看商业模式项目",
+        "查看工作方式"
+      ]
+    },
+    {
+      "jdSignal": [
+        "运营",
+        "内容",
+        "IP",
+        "增长",
+        "社媒",
+        "用户互动",
+        "活动策划"
+      ],
+      "primaryAnchors": [
+        "#project-competition",
+        "#about",
+        "#more"
+      ],
+      "analysisButtonText": [
+        "查看Aegle X项目",
+        "查看工作方式",
+        "查看小红书"
+      ]
+    },
+    {
+      "jdSignal": [
+        "项目管理",
+        "团队管理",
+        "负责人",
+        "跨部门协作",
+        "落地执行"
+      ],
+      "primaryAnchors": [
+        "#project-competition",
+        "#education",
+        "#about"
+      ],
+      "analysisButtonText": [
+        "查看Aegle X项目",
+        "查看组织经历",
+        "查看工作方式"
+      ]
+    }
+  ],
+  "preferredResultFormat": {
+    "title": "匹配分析",
+    "avoidTitle": "推荐HR优先查看",
+    "analysisItemShape": {
+      "text": "自然语言解释JD要求与候选人证据之间的关系",
+      "buttonText": "短按钮文字，例如“查看CareerMod”",
+      "target": "站内锚点，例如#projects"
+    },
+    "maxAnalysisItems": 4,
+    "buttonBehavior": "点击后调用前端scrollToSection滚动到对应section"
+  }
+}

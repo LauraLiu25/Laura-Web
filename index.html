@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>刘红锁 | 个人简历</title>
+  <link rel="stylesheet" href="styles.css?v=20260527-edu-gap30">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="回到首页">
+      <img src="images/site/logo.png" alt="Logo">
+      <span class="brand-name">Laura</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav-menu" aria-label="主导航">
+      <a class="nav-link active" href="#home">首页</a>
+      <a class="nav-link" href="#about">关于我</a>
+      <a class="nav-link" href="#education">教育经历</a>
+      <a class="nav-link" href="#work-experience">工作经历</a>
+      <a class="nav-link" href="#projects">项目经历</a>
+      <a class="nav-link" href="#more">更多</a>
+    </nav>
+  </header>
+
+  <main class="scroll-container">
+    <section class="section page-section hero-section" id="home">
+      <div class="page-shell hero-grid">
+        <div class="hero-copy reveal">
+          <div class="hero-intro">
+            <p class="hero-kicker">AI Explorer · Finance Background</p>
+            <p class="eyebrow">Hi!</p>
+            <h1>我是刘红锁</h1>
+            <p class="hero-description">一位兼具财务思维与商业洞察的AI时代探索者。</p>
+            <div class="hero-actions" aria-label="首页操作">
+              <a class="btn btn-primary" href="assets/downloads/resume-liu-hongsuo.pdf" target="_blank" rel="noopener" download="resume-liu-hongsuo.pdf">下载简历</a>
+              <a class="btn btn-secondary" href="#about">开始探索 <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <form class="matcher-card" id="matcherForm">
+            <div class="matcher-copy">
+              <div class="matcher-head">
+                <div class="matcher-title-row">
+                  <h2>AI岗位匹配器</h2>
+                  <svg class="matcher-star" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M12 2.4l2.47 5.01 5.53.8-4 3.9.94 5.5L12 15.9l-4.94 2.6.94-5.5-4-3.9 5.53-.8L12 2.4z"/>
+                  </svg>
+                </div>
+                <span class="matcher-tag">For HR</span>
+              </div>
+              <p class="type-h2-desc">智能分析候选人与您的招聘岗位匹配情况</p>
+            </div>
+            <textarea id="jdInput" rows="2" placeholder="粘贴职位描述（JD）..."></textarea>
+            <button class="match-button" type="submit" id="matchSubmitBtn">立即匹配</button>
+          </form>
+        </div>
+
+        <figure class="hero-photo reveal reveal-delay">
+          <img src="images/home/hero-portrait.jpg" alt="刘红锁个人照片">
+        </figure>
+      </div>
+
+      <a class="hero-scroll-hint" href="#about" aria-label="向下滑动探索">
+        <svg class="hero-scroll-hint__mouse" width="20" height="30" viewBox="0 0 20 30" aria-hidden="true">
+          <rect x="1" y="1" width="18" height="28" rx="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="10" y1="7" x2="10" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="hero-scroll-hint__chevrons" aria-hidden="true">
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
+            <path d="M2 3.5L9 10.5L16 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 7.5L9 14.5L16 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+    </section>
+
+    <section class="section page-section about-section" id="about">
+      <div class="page-shell about-grid">
+        <div class="about-left reveal">
+          <p class="section-watermark section-watermark--block" aria-hidden="true">ABOUT ME</p>
+          <div class="about-heading-row">
+            <div class="vertical-title">
+              <span>关</span>
+              <span>于</span>
+              <span>我</span>
+              <i></i>
+            </div>
+            <div class="portrait-block">
+              <img class="about-portrait" src="images/about/portrait.jpg" alt="刘红锁圆形个人照片">
+              <h2>刘红锁 | Laura</h2>
+            </div>
+          </div>
+          <div class="about-copy">
+            <p class="about-line">关注商业逻辑、用户体验与内容表达。</p>
+            <div class="about-block">
+              <p class="about-line">在产品与运营的实践中：</p>
+              <p class="about-line about-line--nowrap">逐渐形成以数据为依据、以敏捷为方法、</p>
+              <p class="about-line">以长期主义为导向的工作方式。</p>
+            </div>
+            <div class="about-block">
+              <p class="about-line">喜欢拆解复杂问题，</p>
+              <p class="about-line">也热衷于寻找人与产品之间更自然的连接。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-right reveal reveal-delay">
+          <div class="skill-stage" id="about-skills">
+            <div class="tab-stack" role="tablist" aria-label="技能卡片分类">
+              <button class="skill-tab active" type="button" role="tab" aria-selected="true" data-card="ai">AI应用</button>
+              <button class="skill-tab" type="button" role="tab" aria-selected="false" data-card="product">产品与效率</button>
+              <button class="skill-tab" type="button" role="tab" aria-selected="false" data-card="language">语言与资质</button>
+              <button class="skill-tab" type="button" role="tab" aria-selected="false" data-card="analysis">数据分析</button>
+            </div>
+
+            <div class="cards-wrap">
+              <span class="stack-layer stack-layer-3" aria-hidden="true"></span>
+              <span class="stack-layer stack-layer-2" aria-hidden="true"></span>
+              <span class="stack-layer stack-layer-1" aria-hidden="true"></span>
+              <article class="skill-card card-ai active" data-card-panel="ai" role="tabpanel">
+                <div class="card-orb"><span>AI</span></div>
+                <h3>AI应用</h3>
+                <ul class="skill-list">
+                  <li>VibeCoding开发实战</li>
+                  <li>AI求职产品全栈落地</li>
+                  <li>AI多场景串联与提效</li>
+                </ul>
+                <div class="logo-row logo-row-ai">
+                  <figure><img src="images/about/giphub.png" alt="Giphub"><figcaption>Giphub</figcaption></figure>
+                  <figure><img src="images/about/codex.png" alt="Codex"><figcaption>Codex</figcaption></figure>
+                  <figure class="wide-logo"><img src="images/about/claude.png" alt="Claude"></figure>
+                </div>
+              </article>
+
+              <article class="skill-card card-product" data-card-panel="product" role="tabpanel">
+                <div class="card-orb"><span>Idea</span></div>
+                <h3>产品与效率</h3>
+                <ul class="skill-list">
+                  <li>交互原型与功能逻辑拆解</li>
+                  <li>业务流程图与思维导图设计</li>
+                </ul>
+                <div class="figma-line"><img src="images/about/figma.png" alt="Figma"></div>
+                <div class="logo-row">
+                  <figure><img src="images/about/visio.png" alt="Visio"><figcaption>Visio</figcaption></figure>
+                  <figure><img src="images/about/axure.png" alt="Axure"><figcaption>Axure</figcaption></figure>
+                  <figure><img src="images/about/xmind.png" alt="Xmind"><figcaption>Xmind</figcaption></figure>
+                  <figure><img src="images/about/powerpoint.png" alt="PPT"><figcaption>PPT</figcaption></figure>
+                </div>
+              </article>
+
+              <article class="skill-card card-analysis" data-card-panel="analysis" role="tabpanel">
+                <div class="card-orb"><span>Data</span></div>
+                <h3>数据分析</h3>
+                <ul class="skill-list">
+                  <li>数据清洗与结构化处理</li>
+                  <li>多源财务数据深度分析</li>
+                  <li>业务指标拆解与可视化</li>
+                </ul>
+                <div class="logo-row">
+                  <figure><img src="images/about/python.png" alt="Python"><figcaption>Python</figcaption></figure>
+                  <figure><img src="images/about/sql.png" alt="SQL"><figcaption>SQL</figcaption></figure>
+                  <figure><img src="images/about/excel.png" alt="Excel"><figcaption>Excel</figcaption></figure>
+                  <figure><img src="images/about/stata.png" alt="stata"><figcaption>stata</figcaption></figure>
+                </div>
+              </article>
+
+              <article class="skill-card card-language" data-card-panel="language" role="tabpanel">
+                <div class="card-orb"><span>Cert</span></div>
+                <h3>语言与资质</h3>
+                <div class="cert-grid">
+                  <img src="images/about/cet-4-6.png" alt="CET">
+                  <p>CET-4&nbsp;&nbsp;&nbsp;CET-6</p>
+                  <p>全国计算机二级</p>
+                  <img src="images/about/computer-level-2.png" alt="全国计算机二级">
+                  <img src="images/about/accounting-cert.png" alt="全国初级会计职称">
+                  <p>全国初级会计职称</p>
+                </div>
+              </article>
+            </div>
+
+            <button class="next-card" type="button" aria-label="切换到下一张技能卡片">
+              <span class="next-card__label">Next</span>
+              <span class="next-card__arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M4 9h8M9 5.5L12.5 9 9 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <p class="skill-pager" aria-live="polite">1 / 4</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section page-section education-section" id="education">
+      <div class="education-shell">
+        <header class="section-head section-head--watermark">
+          <p class="section-watermark section-watermark--section" aria-hidden="true">EDUCATION</p>
+          <h2>教育经历</h2>
+        </header>
+
+        <div class="timeline">
+          <article class="timeline-item" data-node="bachelor">
+            <div class="timeline-rail">
+              <span class="timeline-dot"><img src="images/education/undergrad/timeline-logo.png" alt=""></span>
+              <span class="timeline-line"></span>
+              <span class="timeline-date">2019.09<br>↓<br>2023.06</span>
+            </div>
+            <div class="timeline-body">
+              <div class="edu-card">
+                <figure class="edu-cover">
+                  <img src="images/education/undergrad/cover.png" alt="哈尔滨理工大学本科阶段">
+                </figure>
+                <div class="edu-summary">
+                  <div class="edu-intro">
+                    <h3>本科 | 会计学</h3>
+                    <div class="edu-school-row">
+                      <span class="edu-school">哈尔滨理工大学</span>
+                      <div class="edu-tags">
+                        <span>组织协作</span><span>持续探索</span><span>快速成长</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="edu-facts">
+                    <span><i class="edu-fact-mark edu-fact-mark--metric" aria-hidden="true"></i>GPA: 3.97/5</span>
+                    <span><i class="edu-fact-mark edu-fact-mark--role" aria-hidden="true"></i>ERP协会会长</span>
+                    <span><i class="edu-fact-mark edu-fact-mark--award" aria-hidden="true"></i>国家励志奖学金 × 3</span>
+                    <span><i class="edu-fact-mark edu-fact-mark--honor" aria-hidden="true"></i>黑龙江省优秀毕业生</span>
+                  </div>
+                </div>
+                <button class="expand-btn" type="button" aria-expanded="false">
+                  <img class="expand-icon icon-open" src="images/education/expand-open.png" alt="">
+                  <img class="expand-icon icon-close" src="images/education/expand-close.png" alt="">
+                </button>
+              </div>
+
+              <div class="edu-detail">
+                <div class="detail-grid erp-detail">
+                  <div class="detail-copy">
+                    <div class="detail-copy__head">
+                      <h4>ERP协会会长</h4>
+                      <span class="detail-kicker">组织实践·团队管理·活动策划</span>
+                    </div>
+                    <p>在长期的竞赛组织、团队培训与实战模拟中，逐渐形成了对财务、经营、团队协作的系统理解。</p>
+                  </div>
+                  <div class="detail-media two-images">
+                    <img data-lightbox src="images/education/undergrad/detail-1.jpg" alt="ERP协会详情图1">
+                    <img data-lightbox src="images/education/undergrad/detail-2.jpg" alt="ERP协会详情图2">
+                  </div>
+                  <div class="detail-metrics">
+                    <div><strong>20+</strong><span>覆盖专业</span></div>
+                    <div><strong>800+</strong><span>参赛选手</span></div>
+                    <div><strong>3 Years</strong><span>竞赛带队经验</span></div>
+                  </div>
+                </div>
+
+                <div class="detail-grid honors-detail">
+                  <div class="detail-copy">
+                    <div class="detail-copy__head">
+                      <h4>奖学金与荣誉称号</h4>
+                      <span class="detail-kicker">荣誉积累·全面发展</span>
+                    </div>
+                    <div class="honor-history" aria-label="荣誉时间线">
+                      <div class="honor-year">
+                        <strong>2020</strong>
+                        <span></span>
+                        <em>优秀学生干部</em>
+                      </div>
+                      <div class="honor-year">
+                        <strong>2021</strong>
+                        <span></span>
+                        <em>优秀团员</em>
+                      </div>
+                      <div class="honor-year">
+                        <strong>2022</strong>
+                        <span></span>
+                        <em>三好学生</em>
+                      </div>
+                      <div class="honor-year">
+                        <strong>2023</strong>
+                        <span></span>
+                        <em>优秀毕业生</em>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="honor-metrics">
+                    <button data-award="national"><span>国家级荣誉</span><strong>3项</strong></button>
+                    <button data-award="province"><span>省级荣誉</span><strong>1项</strong></button>
+                    <button data-award="school"><span>校级荣誉</span><strong>10+项</strong></button>
+                  </div>
+                </div>
+
+                <div class="detail-grid competition-detail">
+                  <div class="detail-copy">
+                    <div class="detail-copy__head">
+                      <h4>竞赛奖项</h4>
+                      <span class="detail-kicker">创新创业 · 企业模拟 · 财务数智</span>
+                    </div>
+                    <p>从商业模拟到创业竞赛，<br>竞赛经历让我把课堂知识，<br>转化为真实的问题分析与团队决策能力。</p>
+                  </div>
+                  <div class="competition-cards">
+                    <button data-award="competitionNational"><strong>国家级奖项</strong><span>1项</span></button>
+                    <button data-award="competitionProvince"><strong>省级奖项</strong><span>7项</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item" data-node="volunteer">
+            <div class="timeline-rail">
+              <span class="timeline-dot"><img src="images/education/volunteer/timeline-logo.png" alt=""></span>
+              <span class="timeline-line"></span>
+              <span class="timeline-date">2023.07<br>↓<br>2024.07</span>
+            </div>
+            <div class="timeline-body">
+              <div class="edu-card">
+                <a class="edu-cover video-cover" href="https://weixin.qq.com/sph/AkEaw3rYzw" target="_blank" rel="noopener">
+                  <span class="edu-cover__frame">
+                    <span class="play-badge" aria-hidden="true"></span>
+                    <img src="images/education/volunteer/cover.png" alt="研究生支教团">
+                  </span>
+                </a>
+                <div class="edu-summary">
+                  <div class="edu-intro">
+                    <h3>第25届大学生西部志愿服务计划</h3>
+                    <span class="edu-school">研究生支教团</span>
+                  </div>
+                  <div class="edu-facts">
+                    <span><i class="edu-fact-mark edu-fact-mark--time" aria-hidden="true"></i>服务时长 1年</span>
+                    <span><i class="edu-fact-mark edu-fact-mark--place" aria-hidden="true"></i>陕西省咸阳市长武县实验小学</span>
+                  </div>
+                </div>
+                <a class="wechat-link" href="https://mp.weixin.qq.com/s/cVga3rUYex_agwxsywp16A?scene=1" target="_blank" rel="noopener">
+                  <img src="images/education/volunteer/wechat-qr.png" alt="青春长武公众号">
+                  <span class="wechat-link__caption">官方公众号推文</span>
+                </a>
+                <button class="expand-btn" type="button" aria-expanded="false">
+                  <img class="expand-icon icon-open" src="images/education/expand-open.png" alt="">
+                  <img class="expand-icon icon-close" src="images/education/expand-close.png" alt="">
+                </button>
+              </div>
+              <div class="edu-detail">
+                <div class="volunteer-detail-card">
+                  <h4>这一年，从课堂教学到学生陪伴，从支援西部教育到参与乡村振兴活动。</h4>
+                  <p class="volunteer-roles">数学老师·副班主任·音乐老师·科学老师·啦啦操社团指导</p>
+                  <p>这段经历让我开始重新理解：人与人之间的连接、长期主义以及责任感的意义。</p>
+                  <div class="volunteer-gallery">
+                    <img data-lightbox src="images/education/volunteer/detail-1.png" alt="支教详情图1">
+                    <img data-lightbox src="images/education/volunteer/detail-2.jpg" alt="支教详情图2">
+                    <img data-lightbox src="images/education/volunteer/detail-3.png" alt="支教详情图3">
+                  </div>
+                  <div class="volunteer-honors">长武县优秀志愿者·模范班主任·优秀教师·优秀支教教师</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item" data-node="master">
+            <div class="timeline-rail">
+              <span class="timeline-dot"><img src="images/education/master/timeline-logo.png" alt=""></span>
+              <span class="timeline-line"></span>
+              <span class="timeline-date">2024.09<br>↓<br>至今</span>
+            </div>
+            <div class="timeline-body">
+              <div class="edu-card">
+                <figure class="edu-cover">
+                  <img src="images/education/master/cover.jpg" alt="哈尔滨理工大学硕士阶段">
+                </figure>
+                <div class="edu-summary">
+                  <div class="edu-intro">
+                    <h3>硕士 | 工商管理学</h3>
+                    <div class="edu-school-row">
+                      <span class="edu-school">哈尔滨理工大学</span>
+                      <div class="edu-tags">
+                        <span>AI实践</span><span>商业研究</span><span>产品思维</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="edu-facts">
+                    <span><i class="edu-fact-mark edu-fact-mark--metric" aria-hidden="true"></i>GPA: 4.45/5</span>
+                    <span><i class="edu-fact-mark edu-fact-mark--role" aria-hidden="true"></i>班级团支书</span>
+                    <span><i class="edu-fact-mark edu-fact-mark--award" aria-hidden="true"></i>研究生一等奖学金 × 2</span>
+                    <span><i class="edu-fact-mark edu-fact-mark--honor" aria-hidden="true"></i>国家级奖项 × 2</span>
+                  </div>
+                </div>
+                <button class="expand-btn" type="button" aria-expanded="false">
+                  <img class="expand-icon icon-open" src="images/education/expand-open.png" alt="">
+                  <img class="expand-icon icon-close" src="images/education/expand-close.png" alt="">
+                </button>
+              </div>
+              <div class="edu-detail">
+                <div class="master-detail">
+                  <div class="master-copy">
+                    <h4>开始尝试把：<br>研究、商业、技术工具<br>放进同一个问题里思考。</h4>
+                    <p>从案例研究、AI产品实践到产品探索，逐渐形成自己的工作方法。</p>
+                  </div>
+                  <div class="achievement-carousel" aria-label="硕士阶段成就轮播">
+                    <div class="achievement-track">
+                      <article class="achievement-card active" data-achievement="0"><h5>国家级一等奖</h5><p>第三届中国研究生企业管理创新大赛</p></article>
+                      <article class="achievement-card" data-achievement="1"><h5>国家级三等奖</h5><p>正大杯第十五届全国大学生市场调查与分析大赛</p></article>
+                      <article class="achievement-card" data-achievement="2"><h5>研究生一等奖学金</h5><p>2024年度、2025年度硕士研究生一等学业奖学金</p></article>
+                      <article class="achievement-card" data-achievement="3"><h5>荣誉称号</h5><p>校“优秀共青团干部”<br>校“三好学生”</p></article>
+                    </div>
+                    <button class="carousel-arrow prev" type="button" aria-label="上一张">‹</button>
+                    <button class="carousel-arrow next" type="button" aria-label="下一张">›</button>
+                    <div class="carousel-dots" aria-label="轮播指示点"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section page-section work-section" id="work-experience">
+      <div class="work-shell">
+        <header class="work-head section-head--watermark">
+          <p class="section-watermark section-watermark--section" aria-hidden="true">WORK EXPERIENCE</p>
+          <h2>工作经历</h2>
+        </header>
+
+        <div class="work-overview">
+          <div class="work-company">
+            <figure class="company-logo-card">
+              <img src="images/work/company-logo.png" alt="天职国际会计师事务所 Logo">
+            </figure>
+            <div class="company-meta">
+              <h3>天职国际会计师事务所（北京总所）</h3>
+              <div class="company-info">
+                <span class="work-date">2025.12 — 2026.03</span>
+                <span class="work-role">大型旅游商贸国企年审项目实习生</span>
+              </div>
+            </div>
+          </div>
+          <div class="work-metrics" aria-label="工作量化成果">
+            <article class="work-metric">
+              <strong>20+</strong>
+              <span class="work-metric__label">子公司底稿</span>
+              <em>独立完成</em>
+            </article>
+            <article class="work-metric">
+              <strong>3</strong>
+              <span class="work-metric__label">核心模块</span>
+              <em>内控·编制·合并</em>
+            </article>
+            <article class="work-metric">
+              <strong>100+</strong>
+              <span class="work-metric__label">底稿条目</span>
+              <em>复核归档</em>
+            </article>
+            <article class="work-metric work-metric--period">
+              <strong>2月</strong>
+              <span class="work-metric__label">项目周期</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="work-tasks" aria-label="具体工作内容">
+          <article class="work-task-card">
+            <header class="work-task-card__head">
+              <h4><span class="work-task-card__num">01</span> 内控测试</h4>
+              <span class="work-task-card__ext" aria-hidden="true">↗</span>
+            </header>
+            <figure class="work-task-card__media">
+              <img src="images/work/work-1.png" alt="内控测试工作截图">
+            </figure>
+            <ul>
+              <li>现金及固定资产盘点</li>
+              <li>凭证抽查与穿行测试</li>
+              <li>控制点测试</li>
+            </ul>
+          </article>
+          <article class="work-task-card">
+            <header class="work-task-card__head">
+              <h4><span class="work-task-card__num">02</span> 审计底稿编制</h4>
+              <span class="work-task-card__ext" aria-hidden="true">↗</span>
+            </header>
+            <figure class="work-task-card__media">
+              <img src="images/work/work-2.png" alt="审计底稿编制工作截图">
+            </figure>
+            <ul>
+              <li>独立完成 20+ 家子公司审计底稿</li>
+              <li>编制财务专项说明</li>
+              <li>完成关联方交易、往来款项附注披露</li>
+            </ul>
+          </article>
+          <article class="work-task-card">
+            <header class="work-task-card__head">
+              <h4><span class="work-task-card__num">03</span> 集团合并底稿编制</h4>
+              <span class="work-task-card__ext" aria-hidden="true">↗</span>
+            </header>
+            <figure class="work-task-card__media">
+              <img src="images/work/work-3.png" alt="集团合并底稿编制工作截图">
+            </figure>
+            <ul>
+              <li>参与集团三级合并底稿编制</li>
+              <li>负责营收、成本及三费拆分复核</li>
+              <li>协助合并抵消数据核对</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section page-section project-section" id="projects">
+      <div class="project-shell project-shell--grid">
+        <header class="project-head section-head--watermark">
+          <p class="section-watermark section-watermark--section" aria-hidden="true">PROJECT EXPERIENCE</p>
+          <h2>项目经历</h2>
+        </header>
+
+        <div class="project-grid" role="list">
+          <button class="project-card" type="button" data-project="vibe" style="--project-accent:#b6a6e8">
+            <span class="project-card__top">
+              <span class="project-card__index">01</span>
+              <span class="project-card__icon project-card__icon--code" aria-hidden="true"></span>
+            </span>
+            <h3 class="project-card__title">vibe coding 作品</h3>
+            <p class="project-card__subtitle">AI辅助求职平台&amp;个人简历网站</p>
+            <p class="project-card__tags">
+              <span>Web开发</span><span>AI应用</span><span>简历优化</span>
+            </p>
+            <span class="project-card__media">
+              <img src="images/vibe/card-cover.png" alt="vibe coding 作品配图">
+            </span>
+            <span class="project-card__foot">
+              <span class="project-card__meta">
+                <strong>100%自主开发</strong>
+                <em>解决无垂直经历求职</em>
+              </span>
+              <span class="project-card__go" aria-hidden="true">→</span>
+            </span>
+          </button>
+
+          <button class="project-card" type="button" data-project="competition" style="--project-accent:#8eb5e8">
+            <span class="project-card__top">
+              <span class="project-card__index">02</span>
+              <img class="project-card__icon" src="images/competition/card-icon.png" alt="">
+            </span>
+            <h3 class="project-card__title">极因造物 Aegle X</h3>
+            <p class="project-card__subtitle">AI赋能合成生物学·初创项目</p>
+            <p class="project-card__tags">
+              <span>创赛项目</span><span>商业模式</span><span>国一</span>
+            </p>
+            <span class="project-card__media">
+              <img src="images/competition/card-cover.png" alt="极因造物 Aegle X 配图">
+            </span>
+            <span class="project-card__foot">
+              <span class="project-card__meta">
+                <strong>项目负责人</strong>
+                <em>决赛CEO最高评分</em>
+              </span>
+              <span class="project-card__go" aria-hidden="true">→</span>
+            </span>
+          </button>
+
+          <button class="project-card" type="button" data-project="unitree" style="--project-accent:#9dceab">
+            <span class="project-card__top">
+              <span class="project-card__index">03</span>
+              <span class="project-card__icon project-card__icon--doc" aria-hidden="true"></span>
+            </span>
+            <h3 class="project-card__title">宇树科技案例开发</h3>
+            <p class="project-card__subtitle">中国管理案例共享中心收录案例</p>
+            <p class="project-card__tags">
+              <span>案例研究</span><span>具身智能</span><span>战略规划</span>
+            </p>
+            <span class="project-card__media">
+              <img src="images/unitree/card-cover.png" alt="宇树科技案例配图">
+            </span>
+            <span class="project-card__foot">
+              <span class="project-card__meta">
+                <strong>内审阶段</strong>
+                <em>超10万字资料整理</em>
+              </span>
+              <span class="project-card__go" aria-hidden="true">→</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="project-detail-store" hidden aria-hidden="true">
+      <article id="project-detail-vibe" class="project-detail-article" style="--project-modal-accent:#b6a6e8">
+        <header class="project-modal-band">
+          <p class="project-modal-kicker">01 · vibe coding 作品</p>
+          <h3 id="projectModalTitle-vibe">vibe coding 作品</h3>
+          <p class="project-modal-lead">AI辅助求职平台 &amp; 个人简历网站</p>
+          <div class="project-modal-tags">
+            <span>Web开发</span><span>AI应用</span><span>简历优化</span><span>100%自主开发</span>
+          </div>
+        </header>
+        <div class="project-modal-body">
+          <section class="project-modal-block">
+            <h4>CareerMod · AI面试辅助平台</h4>
+            <p>面向求职者的 AI 面试辅助与 JD 智能解析产品，支持非垂直经历转化、简历优化、面试准备与个人语料库沉淀。</p>
+            <ul class="project-modal-list">
+              <li>JD 智能解析与匹配度评估</li>
+              <li>AI 模拟面试与追问训练</li>
+              <li>求职动态与准备流程管理</li>
+            </ul>
+            <div class="project-modal-gallery project-modal-gallery--quad">
+              <figure><img src="images/vibe/careermod-home.png" alt="CareerMod 产品首页"></figure>
+              <figure><img src="images/vibe/careermod-resume.png" alt="简历优化模块"></figure>
+              <figure><img src="images/vibe/careermod-interview.png" alt="面试准备模块"></figure>
+              <figure><img src="images/vibe/careermod-feed.png" alt="求职动态模块"></figure>
+            </div>
+            <p class="project-modal-link-row"><a href="https://www.careermod.cn/" target="_blank" rel="noreferrer">打开 CareerMod 官网 →</a></p>
+          </section>
+          <section class="project-modal-block">
+            <h4>个人简历网站（本站点）</h4>
+            <p>模块化响应式个人站点：全屏滚动吸附、AI 岗位匹配器、教育 / 工作 / 项目经历展示与留言板，作为 vibe coding 实践沉淀。</p>
+            <figure class="project-modal-figure project-modal-figure--wide">
+              <img src="images/vibe/portfolio-home.png" alt="个人简历网站首页">
+            </figure>
+          </section>
+        </div>
+      </article>
+
+      <article id="project-detail-competition" class="project-detail-article" style="--project-modal-accent:#8eb5e8">
+        <header class="project-modal-band">
+          <p class="project-modal-kicker">02 · 极因造物 Aegle X</p>
+          <h3>极因造物 Aegle X</h3>
+          <p class="project-modal-lead">AI赋能合成生物学 · 初创项目</p>
+          <div class="project-modal-tags">
+            <span>创赛项目</span><span>商业模式</span><span>国一</span><span>IP运营</span><span>项目负责人</span>
+          </div>
+        </header>
+        <div class="project-modal-body">
+          <p class="project-modal-intro">聚焦 AI+合成生物学前沿，为初创企业「极因造物」设计 AI 驱动的商业模式，完成从技术场景到商业落地的完整方案。担任项目负责人与路演答辩主讲，获 CEO 决赛最高分。</p>
+          <section class="project-modal-block">
+            <h4>项目资料</h4>
+            <div class="project-modal-resources" aria-label="极因造物相关链接与文件">
+              <a class="project-resource-link project-resource-link--external" href="https://www.douyin.com/jingxuan/search/%E6%9E%81%E5%9B%A0%E9%80%A0%E7%89%A9?aid=88101af6-1ad7-43c0-810f-e0cd398f296b&amp;modal_id=7569066982960613041&amp;type=general" target="_blank" rel="noopener noreferrer">
+                <span class="project-resource-link__label">展示视频</span>
+                <span class="project-resource-link__meta">抖音精选 · 新窗口打开</span>
+              </a>
+              <a class="project-resource-link project-resource-link--file" href="assets/documents/competition-aegle-x-report.pdf" target="_blank" rel="noopener">
+                <span class="project-resource-link__label">项目报告</span>
+                <span class="project-resource-link__meta">PDF · 新窗口查看</span>
+              </a>
+              <a class="project-resource-link project-resource-link--file" href="assets/documents/competition-aegle-x-deck.pdf" target="_blank" rel="noopener">
+                <span class="project-resource-link__label">路演 PPT</span>
+                <span class="project-resource-link__meta">PDF · 新窗口查看</span>
+              </a>
+            </div>
+          </section>
+          <section class="project-modal-block">
+            <h4>商业模式与项目计划</h4>
+            <p>梳理技术场景、目标客户与价值主张，形成可路演、可落地的商业计划与竞赛答辩材料。</p>
+            <figure class="project-modal-figure project-modal-figure--wide">
+              <img src="images/competition/project-plan.png" alt="极因造物项目计划与思路">
+            </figure>
+          </section>
+          <section class="project-modal-block">
+            <h4>IP 运营与品牌传播</h4>
+            <p>参与品牌视觉与新媒体运营策划，配合赛事路演强化「因美而生 向美而行」的品牌认知。</p>
+            <figure class="project-modal-figure project-modal-figure--wide">
+              <img src="images/competition/ip-operations.png" alt="极因造物 IP 与自媒体运营">
+            </figure>
+          </section>
+          <section class="project-modal-block">
+            <h4>竞赛成果</h4>
+            <div class="project-modal-gallery">
+              <figure><img src="images/competition/award-certificate.png" alt="国家级一等奖证明"></figure>
+              <figure><img src="images/competition/award-ceremony.jpg" alt="颁奖典礼现场"></figure>
+            </div>
+          </section>
+        </div>
+      </article>
+
+      <article id="project-detail-unitree" class="project-detail-article" style="--project-modal-accent:#9dceab">
+        <header class="project-modal-band">
+          <p class="project-modal-kicker">03 · 宇树科技案例开发</p>
+          <h3>宇树科技案例开发</h3>
+          <p class="project-modal-lead">中国管理案例共享中心收录案例</p>
+          <div class="project-modal-tags">
+            <span>案例研究</span><span>具身智能</span><span>战略规划</span><span>超10万字资料</span>
+          </div>
+        </header>
+        <div class="project-modal-body">
+          <p class="project-modal-intro">聚焦具身智能头部企业宇树科技，整理超 10 万字一手与二手资料，撰写约 1.2 万字规范教学案例，已获中国管理案例共享中心录用（排版中）。</p>
+          <section class="project-modal-block">
+            <h4>案例文档</h4>
+            <div class="project-modal-resources" aria-label="宇树科技案例 PDF">
+              <a class="project-resource-link project-resource-link--file" href="assets/documents/unitree-case-main.pdf" target="_blank" rel="noopener">
+                <span class="project-resource-link__label">案例正文</span>
+                <span class="project-resource-link__meta">PDF · 新窗口查看</span>
+              </a>
+              <a class="project-resource-link project-resource-link--file" href="assets/documents/unitree-case-teaching-note.pdf" target="_blank" rel="noopener">
+                <span class="project-resource-link__label">教学使用说明</span>
+                <span class="project-resource-link__meta">PDF · 新窗口查看</span>
+              </a>
+            </div>
+          </section>
+          <section class="project-modal-block">
+            <h4>案例主题</h4>
+            <p>围绕「小脑」运动控制与「大脑」战略拓展，分析宇树科技的产品矩阵、竞争格局与下一阶段增长路径。</p>
+            <figure class="project-modal-figure project-modal-figure--wide">
+              <img src="images/unitree/card-cover.png" alt="宇树科技案例配图">
+            </figure>
+          </section>
+          <section class="project-modal-block">
+            <h4>案例开发流程</h4>
+            <p>从资料收集、问题界定、分析框架搭建到案例正文与教学 note 撰写，形成完整案例研究链路。</p>
+            <figure class="project-modal-figure project-modal-figure--wide">
+              <img src="images/unitree/workflow.png" alt="案例开发流程图">
+            </figure>
+          </section>
+        </div>
+      </article>
+    </div>
+    <section class="section page-section more-section" id="more">
+      <div class="more-shell">
+        <header class="more-head section-head--watermark">
+          <p class="section-watermark section-watermark--section" aria-hidden="true">MORE</p>
+          <h2>更多</h2>
+        </header>
+
+        <div class="more-grid">
+          <article class="contact-panel">
+            <section class="more-block">
+              <h3>联系我</h3>
+              <div class="contact-pills" aria-label="联系方式">
+                <a class="contact-pill" href="tel:15845241101">
+                  <img src="images/more/phone.png" alt="">
+                  <span>158 4524 1101</span>
+                  <img class="copy-mark" src="images/more/copy.png" alt="">
+                </a>
+                <a class="contact-pill" href="mailto:Laura_lhs@163.com">
+                  <img src="images/more/email.png" alt="">
+                  <span>Laura_lhs@163.com</span>
+                  <img class="copy-mark" src="images/more/copy.png" alt="">
+                </a>
+              </div>
+            </section>
+
+            <section class="more-block discover-block">
+              <h3>发现更多我</h3>
+              <div class="discover-cards">
+                <a class="discover-card" href="https://github.com/LauraLiu25" target="_blank" rel="noreferrer">
+                  <span class="share-mark" aria-label="跳转"></span>
+                  <img class="discover-logo github-logo" src="images/more/github.png" alt="Github">
+                  <strong>Github</strong>
+                  <span>查看我的上线项目</span>
+                </a>
+                <a class="discover-card" href="https://xhslink.com/m/16nbw2KqWT3" target="_blank" rel="noreferrer">
+                  <span class="share-mark" aria-label="跳转"></span>
+                  <img class="discover-logo xhs-logo" src="images/more/xiaohongshu.png" alt="小红书">
+                  <strong>小红书</strong>
+                  <span>记录AI产品探索笔记</span>
+                </a>
+              </div>
+            </section>
+          </article>
+
+          <article class="message-panel">
+            <form id="messageForm" class="message-board" novalidate>
+              <h3>留言板</h3>
+              <label>
+                <span>昵称</span>
+                <input id="messageName" type="text" placeholder="您的名字或昵称（选填）">
+              </label>
+              <label>
+                <span>联系方式</span>
+                <input id="messageEmail" type="email" placeholder="example@email.com（选填）">
+              </label>
+              <label>
+                <span>留言内容</span>
+                <textarea id="messageText" rows="4" placeholder="想对我说什么～"></textarea>
+              </label>
+            </form>
+            <button class="message-send" type="submit" form="messageForm">
+              <span>发送</span><i aria-hidden="true">✦</i>
+            </button>
+            <p class="message-status" id="messageStatus" role="status" aria-live="polite"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js?v=20260527-message-optional"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+{
+  "version": "2026-05-27",
+  "siteRoot": ".",
+  "internalAnchors": [
+    { "id": "home", "href": "#home", "label": "首页" },
+    { "id": "about", "href": "#about", "label": "关于我" },
+    { "id": "about-skills", "href": "#about-skills", "label": "技能卡片" },
+    { "id": "education", "href": "#education", "label": "教育经历" },
+    { "id": "work-experience", "href": "#work-experience", "label": "工作经历" },
+    { "id": "projects", "href": "#projects", "label": "项目经历" },
+    { "id": "more", "href": "#more", "label": "更多" }
+  ],
+  "downloads": [
+    {
+      "id": "resume",
+      "label": "下载简历",
+      "href": "assets/downloads/resume-liu-hongsuo.pdf",
+      "deployPath": "assets/downloads/resume-liu-hongsuo.pdf",
+      "openInNewTab": true,
+      "downloadFilename": "resume-liu-hongsuo.pdf",
+      "sourceNote": "原路径：首页/简历-刘红锁-哈尔滨理工大学硕士研究生二年级.pdf"
+    }
+  ],
+  "documents": [
+    {
+      "id": "competition-report",
+      "label": "极因造物 · 项目报告",
+      "href": "assets/documents/competition-aegle-x-report.pdf",
+      "deployPath": "assets/documents/competition-aegle-x-report.pdf",
+      "project": "competition",
+      "sourceNote": "3.2 极因造物…/极因造物 Aegle X-项目报告.pdf"
+    },
+    {
+      "id": "competition-deck",
+      "label": "极因造物 · 路演 PPT",
+      "href": "assets/documents/competition-aegle-x-deck.pdf",
+      "deployPath": "assets/documents/competition-aegle-x-deck.pdf",
+      "project": "competition",
+      "sourceNote": "3.2 极因造物…/项目PPT-….pdf"
+    },
+    {
+      "id": "unitree-case-main",
+      "label": "宇树科技 · 案例正文",
+      "href": "assets/documents/unitree-case-main.pdf",
+      "deployPath": "assets/documents/unitree-case-main.pdf",
+      "project": "unitree",
+      "sourceNote": "3.3 宇树科技案例/…微信文字.pdf"
+    },
+    {
+      "id": "unitree-teaching-note",
+      "label": "宇树科技 · 教学使用说明",
+      "href": "assets/documents/unitree-case-teaching-note.pdf",
+      "deployPath": "assets/documents/unitree-case-teaching-note.pdf",
+      "project": "unitree",
+      "sourceNote": "3.3 宇树科技案例/…使用说明.pdf"
+    }
+  ],
+  "external": [
+    {
+      "id": "volunteer-video",
+      "label": "支教视频号",
+      "href": "https://weixin.qq.com/sph/AkEaw3rYzw",
+      "section": "education"
+    },
+    {
+      "id": "volunteer-wechat-article",
+      "label": "青春长武公众号推文",
+      "href": "https://mp.weixin.qq.com/s/cVga3rUYex_agwxsywp16A?scene=1",
+      "section": "education"
+    },
+    {
+      "id": "careermod",
+      "label": "CareerMod 官网",
+      "href": "https://www.careermod.cn/",
+      "section": "projects",
+      "project": "vibe"
+    },
+    {
+      "id": "competition-douyin-video",
+      "label": "极因造物 · 展示视频（抖音）",
+      "href": "https://www.douyin.com/jingxuan/search/%E6%9E%81%E5%9B%A0%E9%80%A0%E7%89%A9?aid=88101af6-1ad7-43c0-810f-e0cd398f296b&modal_id=7569066982960613041&type=general",
+      "section": "projects",
+      "project": "competition"
+    },
+    {
+      "id": "github",
+      "label": "Github",
+      "href": "https://github.com/LauraLiu25",
+      "section": "more"
+    },
+    {
+      "id": "xiaohongshu",
+      "label": "小红书",
+      "href": "https://xhslink.com/m/16nbw2KqWT3",
+      "section": "more"
+    }
+  ],
+  "contact": [
+    { "id": "phone", "label": "电话", "href": "tel:15845241101" },
+    { "id": "email", "label": "邮箱", "href": "mailto:Laura_lhs@163.com" }
+  ],
+  "projectResources": {
+    "competition": [
+      {
+        "kind": "external",
+        "label": "展示视频",
+        "sublabel": "抖音精选",
+        "href": "https://www.douyin.com/jingxuan/search/%E6%9E%81%E5%9B%A0%E9%80%A0%E7%89%A9?aid=88101af6-1ad7-43c0-810f-e0cd398f296b&modal_id=7569066982960613041&type=general"
+      },
+      {
+        "kind": "document",
+        "label": "项目报告",
+        "sublabel": "PDF",
+        "href": "assets/documents/competition-aegle-x-report.pdf"
+      },
+      {
+        "kind": "document",
+        "label": "路演 PPT",
+        "sublabel": "PDF",
+        "href": "assets/documents/competition-aegle-x-deck.pdf"
+      }
+    ],
+    "unitree": [
+      {
+        "kind": "document",
+        "label": "案例正文",
+        "sublabel": "PDF",
+        "href": "assets/documents/unitree-case-main.pdf"
+      },
+      {
+        "kind": "document",
+        "label": "教学使用说明",
+        "sublabel": "PDF",
+        "href": "assets/documents/unitree-case-teaching-note.pdf"
+      }
+    ]
+  }
+}
