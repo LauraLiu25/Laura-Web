@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>刘红锁 | 个人简历</title>
-  <link rel="stylesheet" href="styles.css?v=20260528-edu-axis-gap">
+  <link rel="stylesheet" href="styles.css?v=20260528-hero-photo-edge-fade">
 </head>
 <body>
   <header class="site-header">
@@ -37,7 +37,7 @@
             <h1>我是刘红锁</h1>
             <p class="hero-description">一位兼具财务思维与商业洞察的AI时代探索者。</p>
             <div class="hero-actions" aria-label="首页操作">
-              <a class="btn btn-primary" id="resumeDownloadBtn" href="assets/downloads/resume-liu-hongsuo.pdf" rel="noopener">下载简历</a>
+              <a class="btn btn-primary" id="resumeDownloadBtn" href="assets/downloads/resume-liu-hongsuo.pdf" target="_blank" rel="noopener" role="button" aria-label="新窗口预览简历">预览简历</a>
               <a class="btn btn-secondary" href="#about">开始探索 <span aria-hidden="true">→</span></a>
             </div>
           </div>
@@ -61,7 +61,7 @@
         </div>
 
         <figure class="hero-photo reveal reveal-delay">
-          <img src="images/home/hero-portrait.jpg" alt="刘红锁个人照片">
+          <img src="images/home/hero-portrait.png?v=20260528-2" alt="刘红锁个人照片">
         </figure>
       </div>
 
@@ -245,7 +245,7 @@
                       <h4>ERP协会会长</h4>
                       <span class="detail-kicker">组织实践·团队管理·活动策划</span>
                     </div>
-                    <p>在长期的竞赛组织、团队培训与实战模拟中，逐渐形成了对财务、经营、团队协作的系统理解。</p>
+                    <p>在长期的竞赛组织、<br>团队培训与实战模拟中，<br>逐渐形成<br>对<strong>财务</strong>、<strong>经营</strong>、<strong>团队协作</strong>的系统理解。</p>
                   </div>
                   <div class="detail-media two-images">
                     <img data-lightbox src="images/education/undergrad/detail-1.jpg" alt="ERP协会详情图1">
@@ -288,9 +288,27 @@
                     </div>
                   </div>
                   <div class="honor-metrics">
-                    <button data-award="national"><span>国家级荣誉</span><strong>3项</strong></button>
-                    <button data-award="province"><span>省级荣誉</span><strong>1项</strong></button>
-                    <button data-award="school"><span>校级荣誉</span><strong>10+项</strong></button>
+                    <button type="button" data-award="national">
+                      <span class="honor-metrics__main">
+                        <img class="honor-metrics__thumb" src="images/education/undergrad/honor-national.svg" alt="" width="44" height="44">
+                        <span class="honor-metrics__label">国家级荣誉</span>
+                      </span>
+                      <strong>3项</strong>
+                    </button>
+                    <button type="button" data-award="province">
+                      <span class="honor-metrics__main">
+                        <img class="honor-metrics__thumb" src="images/education/undergrad/honor-province.svg" alt="" width="44" height="44">
+                        <span class="honor-metrics__label">省级荣誉</span>
+                      </span>
+                      <strong>1项</strong>
+                    </button>
+                    <button type="button" data-award="school">
+                      <span class="honor-metrics__main">
+                        <img class="honor-metrics__thumb" src="images/education/undergrad/honor-school.svg" alt="" width="44" height="44">
+                        <span class="honor-metrics__label">校级荣誉</span>
+                      </span>
+                      <strong>10+项</strong>
+                    </button>
                   </div>
                 </div>
 
@@ -300,11 +318,23 @@
                       <h4>竞赛奖项</h4>
                       <span class="detail-kicker">创新创业 · 企业模拟 · 财务数智</span>
                     </div>
-                    <p>从商业模拟到创业竞赛，<br>竞赛经历让我把课堂知识，<br>转化为真实的问题分析与团队决策能力。</p>
+                    <p>从<strong>商业模拟</strong>到<strong>创业竞赛</strong>，<br>竞赛经历让我把课堂知识，<br>转化为真实的问题分析与团队决策能力。</p>
                   </div>
                   <div class="competition-cards">
-                    <button data-award="competitionNational"><strong>国家级奖项</strong><span>1项</span></button>
-                    <button data-award="competitionProvince"><strong>省级奖项</strong><span>7项</span></button>
+                    <button type="button" data-award="competitionNational">
+                      <span class="competition-cards__main">
+                        <img class="competition-cards__thumb" src="images/education/undergrad/competition-national.svg" alt="" width="44" height="44">
+                        <strong>国家级奖项</strong>
+                      </span>
+                      <span class="competition-cards__count">1项</span>
+                    </button>
+                    <button type="button" data-award="competitionProvince">
+                      <span class="competition-cards__main">
+                        <img class="competition-cards__thumb" src="images/education/undergrad/competition-province.svg" alt="" width="44" height="44">
+                        <strong>省级奖项</strong>
+                      </span>
+                      <span class="competition-cards__count">7项</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -346,15 +376,50 @@
               </div>
               <div class="edu-detail">
                 <div class="volunteer-detail-card">
-                  <h4>这一年，从课堂教学到学生陪伴，从支援西部教育到参与乡村振兴活动。</h4>
-                  <p class="volunteer-roles">数学老师·副班主任·音乐老师·科学老师·啦啦操社团指导</p>
-                  <p>这段经历让我开始重新理解：人与人之间的连接、长期主义以及责任感的意义。</p>
-                  <div class="volunteer-gallery">
-                    <img data-lightbox src="images/education/volunteer/detail-1.png" alt="支教详情图1">
-                    <img data-lightbox src="images/education/volunteer/detail-2.jpg" alt="支教详情图2">
-                    <img data-lightbox src="images/education/volunteer/detail-3.png" alt="支教详情图3">
+                  <div class="volunteer-detail-copy">
+                    <div class="volunteer-role-row">
+                      <img class="volunteer-role__icon" src="images/education/volunteer/role-icon.svg" alt="" width="36" height="36">
+                      <h4 class="volunteer-roles">数学老师 · 副班主任 · 音乐老师 · 科学老师 · 啦啦操社团指导</h4>
+                    </div>
+                    <div class="volunteer-story">
+                      <p class="volunteer-story__lead">这一年，<br>从<strong>课堂教学到</strong><strong>学生陪伴</strong>，<br>从支援<strong>西部教育</strong>到参与<strong>乡村振兴</strong>活动。</p>
+                      <p class="volunteer-story__insight">这段经历让我开始重新理解：<br>人与人之间的连接、<br>长期主义以及责任感的意义。</p>
+                    </div>
                   </div>
-                  <div class="volunteer-honors">长武县优秀志愿者·模范班主任·优秀教师·优秀支教教师</div>
+                  <div class="volunteer-detail-media">
+                    <div class="volunteer-gallery">
+                      <figure class="volunteer-gallery__item">
+                        <img data-lightbox src="images/education/volunteer/detail-1.png" alt="乡村调研">
+                        <figcaption>乡村调研</figcaption>
+                      </figure>
+                      <figure class="volunteer-gallery__item">
+                        <img data-lightbox src="images/education/volunteer/detail-2.jpg" alt="公开课示范">
+                        <figcaption>公开课示范</figcaption>
+                      </figure>
+                      <figure class="volunteer-gallery__item">
+                        <img data-lightbox src="images/education/volunteer/detail-3.png" alt="课堂教学">
+                        <figcaption>课堂教学</figcaption>
+                      </figure>
+                    </div>
+                    <div class="volunteer-honors" aria-label="支教荣誉">
+                      <span class="volunteer-honor-item">
+                        <img class="volunteer-honor-item__icon" src="images/education/volunteer/honor-badge.svg" alt="" width="18" height="18">
+                        <span>长武县优秀志愿者</span>
+                      </span>
+                      <span class="volunteer-honor-item">
+                        <img class="volunteer-honor-item__icon" src="images/education/volunteer/honor-badge.svg" alt="" width="18" height="18">
+                        <span>模范班主任</span>
+                      </span>
+                      <span class="volunteer-honor-item">
+                        <img class="volunteer-honor-item__icon" src="images/education/volunteer/honor-badge.svg" alt="" width="18" height="18">
+                        <span>优秀教师</span>
+                      </span>
+                      <span class="volunteer-honor-item">
+                        <img class="volunteer-honor-item__icon" src="images/education/volunteer/honor-badge.svg" alt="" width="18" height="18">
+                        <span>优秀支教教师</span>
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -396,8 +461,8 @@
               <div class="edu-detail">
                 <div class="master-detail">
                   <div class="master-copy">
-                    <h4>开始尝试把：<br>研究、商业、技术工具<br>放进同一个问题里思考。</h4>
-                    <p>从案例研究、AI产品实践到产品探索，逐渐形成自己的工作方法。</p>
+                    <p class="master-copy__lead">开始尝试把：<br>研究、商业、技术工具<br>放进同一个问题里思考。</p>
+                    <p class="master-copy__body">从<strong>案例研究</strong>、<br><strong>AI产品实践</strong>到<strong>产品探索</strong>，<br>逐渐形成自己的工作方法。</p>
                   </div>
                   <div class="achievement-carousel" aria-label="硕士阶段成就轮播">
                     <div class="achievement-track">
@@ -453,10 +518,6 @@
               <span class="work-metric__label">底稿条目</span>
               <em>复核归档</em>
             </article>
-            <article class="work-metric work-metric--period">
-              <strong>2月</strong>
-              <span class="work-metric__label">项目周期</span>
-            </article>
           </div>
         </div>
 
@@ -464,7 +525,6 @@
           <article class="work-task-card">
             <header class="work-task-card__head">
               <h4><span class="work-task-card__num">01</span> 内控测试</h4>
-              <span class="work-task-card__ext" aria-hidden="true">↗</span>
             </header>
             <figure class="work-task-card__media">
               <img src="images/work/work-1.png" alt="内控测试工作截图">
@@ -478,7 +538,6 @@
           <article class="work-task-card">
             <header class="work-task-card__head">
               <h4><span class="work-task-card__num">02</span> 审计底稿编制</h4>
-              <span class="work-task-card__ext" aria-hidden="true">↗</span>
             </header>
             <figure class="work-task-card__media">
               <img src="images/work/work-2.png" alt="审计底稿编制工作截图">
@@ -492,7 +551,6 @@
           <article class="work-task-card">
             <header class="work-task-card__head">
               <h4><span class="work-task-card__num">03</span> 集团合并底稿编制</h4>
-              <span class="work-task-card__ext" aria-hidden="true">↗</span>
             </header>
             <figure class="work-task-card__media">
               <img src="images/work/work-3.png" alt="集团合并底稿编制工作截图">
@@ -532,7 +590,7 @@
                 <strong>100%自主开发</strong>
                 <em>解决无垂直经历求职</em>
               </span>
-              <span class="project-card__go" aria-hidden="true">→</span>
+              <span class="project-card__go">查看详情</span>
             </span>
           </button>
 
@@ -542,7 +600,7 @@
               <img class="project-card__icon" src="images/competition/card-icon.png" alt="">
             </span>
             <h3 class="project-card__title">极因造物 Aegle X</h3>
-            <p class="project-card__subtitle">AI赋能合成生物学·初创项目</p>
+            <p class="project-card__subtitle">探索AI与生命科学的交叉边界</p>
             <p class="project-card__tags">
               <span>创赛项目</span><span>商业模式</span><span>国一</span>
             </p>
@@ -554,7 +612,7 @@
                 <strong>项目负责人</strong>
                 <em>决赛CEO最高评分</em>
               </span>
-              <span class="project-card__go" aria-hidden="true">→</span>
+              <span class="project-card__go">查看详情</span>
             </span>
           </button>
 
@@ -564,7 +622,7 @@
               <span class="project-card__icon project-card__icon--doc" aria-hidden="true"></span>
             </span>
             <h3 class="project-card__title">宇树科技案例开发</h3>
-            <p class="project-card__subtitle">中国管理案例共享中心收录案例</p>
+            <p class="project-card__subtitle">从商业案例中理解具身智能</p>
             <p class="project-card__tags">
               <span>案例研究</span><span>具身智能</span><span>战略规划</span>
             </p>
@@ -576,7 +634,7 @@
                 <strong>内审阶段</strong>
                 <em>超10万字资料整理</em>
               </span>
-              <span class="project-card__go" aria-hidden="true">→</span>
+              <span class="project-card__go">查看详情</span>
             </span>
           </button>
         </div>
@@ -742,16 +800,16 @@
               <h3>发现更多我</h3>
               <div class="discover-cards">
                 <a class="discover-card" href="https://github.com/LauraLiu25" target="_blank" rel="noreferrer">
-                  <span class="share-mark" aria-label="跳转"></span>
+                  <span class="discover-card__go" aria-hidden="true">→</span>
                   <img class="discover-logo github-logo" src="images/more/github.png" alt="Github">
                   <strong>Github</strong>
-                  <span>查看我的上线项目</span>
+                  <span class="discover-card__desc">查看我的上线项目</span>
                 </a>
                 <a class="discover-card" href="https://xhslink.com/m/16nbw2KqWT3" target="_blank" rel="noreferrer">
-                  <span class="share-mark" aria-label="跳转"></span>
+                  <span class="discover-card__go" aria-hidden="true">→</span>
                   <img class="discover-logo xhs-logo" src="images/more/xiaohongshu.png" alt="小红书">
                   <strong>小红书</strong>
-                  <span>记录AI产品探索笔记</span>
+                  <span class="discover-card__desc">记录AI产品探索笔记</span>
                 </a>
               </div>
             </section>
@@ -783,6 +841,6 @@
     </section>
   </main>
 
-  <script src="script.js?v=20260528-edu-axis"></script>
+  <script src="script.js?v=20260528-resume-preview-only"></script>
 </body>
 </html>

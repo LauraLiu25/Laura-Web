@@ -10,7 +10,7 @@ Cloudflare Pages environment variables:
 
 - `NEWAPI_BASE_URL`, for example `https://ai.apixyz.cn`
 - `NEWAPI_API_KEY`
-- `NEWAPI_MODEL`, for example `gpt-4o-mini`
+- `NEWAPI_MODEL`, for example `gpt-5.4`
 - `WECHAT_ID`, optional
 
 Cloudflare D1 binding:

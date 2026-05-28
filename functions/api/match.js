@@ -49,7 +49,7 @@ export async function onRequestGet() {
 async function callAi(env, jd) {
   const baseUrl = String(env.NEWAPI_BASE_URL || "https://ai.apixyz.cn").replace(/\/$/, "");
   const apiKey = env.NEWAPI_API_KEY;
-  const model = env.NEWAPI_MODEL || "gpt-4o-mini";
+  const model = env.NEWAPI_MODEL || "gpt-5.4";
 
   if (!apiKey) {
     throw new Error("Cloudflare 环境变量 NEWAPI_API_KEY 还没有配置。");

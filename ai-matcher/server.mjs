@@ -140,7 +140,7 @@ async function requestChatCompletion(baseUrl, apiKey, model, jd, useJsonMode) {
 async function callNewApi(jd) {
   const baseUrl = (process.env.NEWAPI_BASE_URL || "https://ai.apixyz.cn").replace(/\/$/, "");
   const apiKey = process.env.NEWAPI_API_KEY;
-  const model = process.env.NEWAPI_MODEL || "gpt-4o-mini";
+  const model = process.env.NEWAPI_MODEL || "gpt-5.4";
 
   if (!apiKey) {
     throw new Error("未配置 NEWAPI_API_KEY，请在 ai-matcher/.env 中设置");
@@ -225,7 +225,7 @@ app.get("/api/health", (_req, res) => {
   res.json({
     ok: true,
     hasApiKey: Boolean(process.env.NEWAPI_API_KEY),
-    model: process.env.NEWAPI_MODEL || "gpt-4o-mini",
+    model: process.env.NEWAPI_MODEL || "gpt-5.4",
     hasMessageMail: isMessageMailConfigured(),
     hasWechatId: Boolean(WECHAT_ID),
   });

@@ -23,7 +23,7 @@ npm start
 |------|------|
 | `NEWAPI_BASE_URL` | 默认 `https://ai.apixyz.cn` |
 | `NEWAPI_API_KEY` | NewAPI / OpenAI 兼容密钥 |
-| `NEWAPI_MODEL` | 默认 `gpt-4o-mini` |
+| `NEWAPI_MODEL` | 默认 `gpt-5.4` |
 | `SMTP_HOST` | 如 `smtp.163.com` |
 | `SMTP_PORT` | 如 `465` |
 | `SMTP_USER` | 发信邮箱（163 需开启 SMTP 授权码） |

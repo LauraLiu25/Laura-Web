@@ -18,23 +18,6 @@ const messageText = document.querySelector("#messageText");
 const messageStatus = document.querySelector("#messageStatus");
 const messageSendBtn = document.querySelector(".message-send");
 const MESSAGE_API_URL = window.MESSAGE_API_URL || "/api/message";
-const RESUME_PDF_URL = "assets/downloads/resume-liu-hongsuo.pdf";
-const RESUME_DOWNLOAD_NAME = "刘红锁-哈尔滨理工大学硕士-2027届.pdf";
-const resumeDownloadBtn = document.querySelector("#resumeDownloadBtn");
-
-resumeDownloadBtn?.addEventListener("click", (event) => {
-  event.preventDefault();
-  window.open(RESUME_PDF_URL, "_blank", "noopener,noreferrer");
-  const link = document.createElement("a");
-  link.href = RESUME_PDF_URL;
-  link.download = RESUME_DOWNLOAD_NAME;
-  link.rel = "noopener";
-  link.hidden = true;
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-});
-
 const cardOrder = ["ai", "product", "language", "analysis"];
 let activeCard = "ai";
 let wechatToastLayer = null;
@@ -313,7 +296,7 @@ function renderMatchModalError(message) {
     </header>
     <section class="match-analysis">
       <article class="match-analysis-item">
-        <p class="match-analysis-item__text">请确认已启动 ai-matcher 服务（<code>npm start</code>），并在 ai-matcher/.env 中配置 API 密钥。</p>
+        <p class="match-analysis-item__text">请确认 Cloudflare Pages 的 Variables and Secrets 已配置 <code>NEWAPI_API_KEY</code>，并且 <code>NEWAPI_MODEL</code> 是当前 API 平台支持的模型。</p>
       </article>
     </section>`;
   modal.classList.add("show");
@@ -534,19 +517,100 @@ const awardData = {
     ]
   },
   competitionNational: {
-    title: "国家级竞赛奖项",
-    items: ["国家级项目优秀结题｜黑龙江省大学生创新创业训练计划项目｜2022年8月"]
+    layout: "showcase",
+    heading: "国家级竞赛奖项",
+    subtitle: "国家级项目优秀结题—黑龙江省大学生创新创业训练计划项目｜2022年8月",
+    sections: [
+      {
+        heading: "核心亮点",
+        items: [
+          "全校 2/144 优秀结项",
+          "6 人团队项目负责人",
+          "2 万字立项报告",
+          "开发 · 调研 · 运营全流程统筹"
+        ]
+      },
+      {
+        heading: "项目成果",
+        items: [
+          "软件著作权｜一体式就业服务平台 V1.0",
+          "工作室注册｜荣成市择路记网络科技服务工作室",
+          "研究论文｜演化博弈与企业技术创新方向",
+          "用户调研｜问卷设计、结果分析与影响因素报告",
+          "网站落地｜“择路记”就业服务平台"
+        ]
+      },
+      {
+        heading: "落地服务",
+        paragraphs: [
+          "为泰祥集团提供省级非物质文化遗产电商数据分析服务，获得企业认可并形成深度合作。"
+        ]
+      }
+    ],
+    tags: [
+      "项目统筹",
+      "产品落地",
+      "用户调研",
+      "数据分析",
+      "团队协作",
+      "创新创业"
+    ]
   },
   competitionProvince: {
-    title: "省级竞赛奖项",
-    items: [
-      "省级铜奖｜“建行杯”第八届黑龙江省“互联网+”大学生创新创业大赛｜2022年8月",
-      "省级铜奖｜第三届工商银行“挑战杯”黑龙江省大学生创业计划竞赛｜2022年8月",
-      "山东省一等奖｜第十七届全国大学生数智化企业经营沙盘大赛｜2021年6月",
-      "山东省三等奖｜全国高等院校财务数智化大赛财务大数据赛项｜2020年11月",
-      "山东省一等奖｜第十六届全国大学生“新道杯”沙盘模拟经营大赛｜2020年10月",
-      "山东省本科组一等奖｜第十二届山东省大学生科技节——模拟企业经营大赛｜2020年10月",
-      "山东省二等奖｜第三届“新道数智人才杯”全国高等院校数智人力大赛｜2020年6月"
+    layout: "showcase",
+    heading: "省级竞赛奖项",
+    subtitle: "创新创业 · 企业经营模拟 · 财务数智化｜2020-2022",
+    categories: [
+      {
+        heading: "创新创业",
+        awards: [
+          {
+            time: "2022年8月",
+            level: "省级铜奖",
+            name: "“建行杯”第八届黑龙江省“互联网+”大学生创新创业大赛"
+          },
+          {
+            time: "2022年8月",
+            level: "省级铜奖",
+            name: "第三届工商银行“挑战杯”黑龙江省大学生创业计划竞赛"
+          }
+        ]
+      },
+      {
+        heading: "企业经营模拟",
+        awards: [
+          {
+            time: "2021年6月",
+            level: "山东省一等奖",
+            name: "第十七届全国大学生数智化企业经营沙盘大赛"
+          },
+          {
+            time: "2020年10月",
+            level: "山东省一等奖",
+            name: "第十六届全国大学生“新道杯”沙盘模拟经营大赛"
+          },
+          {
+            time: "2020年10月",
+            level: "山东省一等奖",
+            name: "第十二届山东省大学生科技节——模拟企业经营大赛"
+          }
+        ]
+      },
+      {
+        heading: "财务数智化",
+        awards: [
+          {
+            time: "2020年11月",
+            level: "山东省三等奖",
+            name: "全国高等院校财务数智化大赛财务大数据赛项"
+          },
+          {
+            time: "2020年6月",
+            level: "山东省二等奖",
+            name: "第三届“新道数智人才杯”全国高等院校数智人力大赛"
+          }
+        ]
+      }
     ]
   }
 };
@@ -623,20 +687,116 @@ if (document.fonts?.ready) {
   document.fonts.ready.then(updateAllTimelineLines);
 }
 
+function escapeAwardHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function renderAwardListMarkup(data) {
+  return `
+    <h3>${escapeAwardHtml(data.title)}</h3>
+    <ul>${data.items.map((item) => `<li>${escapeAwardHtml(item)}</li>`).join("")}</ul>`;
+}
+
+function renderAwardCategoryEntries(awards) {
+  return (awards || [])
+    .map(
+      (award) => `
+        <li class="award-showcase__entry">
+          <span class="award-showcase__time">${escapeAwardHtml(award.time)}</span>
+          <span class="award-showcase__level">${escapeAwardHtml(award.level)}</span>
+          <span class="award-showcase__name">${escapeAwardHtml(award.name)}</span>
+        </li>`
+    )
+    .join("");
+}
+
+function renderAwardShowcaseMarkup(data) {
+  const categories = (data.categories || [])
+    .map(
+      (category) => `
+        <section class="award-showcase__block award-showcase__block--category">
+          <h4>${escapeAwardHtml(category.heading)}</h4>
+          <ul class="award-showcase__entries" aria-label="${escapeAwardHtml(category.heading)}">
+            ${renderAwardCategoryEntries(category.awards)}
+          </ul>
+        </section>`
+    )
+    .join("");
+
+  const sections = (data.sections || [])
+    .map((section) => {
+      const list = (section.items || [])
+        .map((item) => `<li>${escapeAwardHtml(item)}</li>`)
+        .join("");
+      const paragraphs = (section.paragraphs || [])
+        .map((item) => `<p>${escapeAwardHtml(item)}</p>`)
+        .join("");
+      const body = list
+        ? `<ul class="award-showcase__list">${list}</ul>`
+        : `<div class="award-showcase__copy">${paragraphs}</div>`;
+      return `
+        <section class="award-showcase__block">
+          <h4>${escapeAwardHtml(section.heading)}</h4>
+          ${body}
+        </section>`;
+    })
+    .join("");
+
+  const tags = (data.tags || [])
+    .map((tag) => `<span>${escapeAwardHtml(tag)}</span>`)
+    .join("");
+  const tagsMarkup = tags
+    ? `<footer class="award-showcase__tags" aria-label="能力标签">${tags}</footer>`
+    : "";
+
+  const subtitle = data.subtitle
+    ? `<p class="award-showcase__subtitle">${escapeAwardHtml(data.subtitle)}</p>`
+    : "";
+
+  return `
+    <article class="award-showcase">
+      <header class="award-showcase__head award-showcase__head--center">
+        <h2 class="award-showcase__title">${escapeAwardHtml(data.heading || data.title || "")}</h2>
+        ${subtitle}
+      </header>
+      ${categories}
+      ${sections}
+      ${tagsMarkup}
+    </article>`;
+}
+
+function renderAwardModalContent(data) {
+  if (data.layout === "showcase") {
+    return renderAwardShowcaseMarkup(data);
+  }
+  return renderAwardListMarkup(data);
+}
+
 function ensureModal() {
   let backdrop = document.querySelector(".modal-backdrop");
-  if (backdrop) return backdrop;
-  backdrop = document.createElement("div");
-  backdrop.className = "modal-backdrop";
-  backdrop.innerHTML = `<div class="award-modal" role="dialog" aria-modal="true">
-    <button class="modal-close" type="button" aria-label="关闭">×</button>
-    <h3></h3>
-    <ul></ul>
-  </div>`;
-  document.body.appendChild(backdrop);
-  backdrop.addEventListener("click", (event) => {
-    if (event.target === backdrop || event.target.closest(".modal-close")) backdrop.classList.remove("show");
-  });
+  if (!backdrop) {
+    backdrop = document.createElement("div");
+    backdrop.className = "modal-backdrop";
+    backdrop.innerHTML = `<div class="award-modal" role="dialog" aria-modal="true">
+      <button class="modal-close" type="button" aria-label="关闭">×</button>
+      <div class="award-modal__body"></div>
+    </div>`;
+    document.body.appendChild(backdrop);
+    backdrop.addEventListener("click", (event) => {
+      if (event.target === backdrop || event.target.closest(".modal-close")) backdrop.classList.remove("show");
+    });
+    return backdrop;
+  }
+
+  const panel = backdrop.querySelector(".award-modal");
+  if (panel && !panel.querySelector(".award-modal__body")) {
+    panel.innerHTML = `<button class="modal-close" type="button" aria-label="关闭">×</button>
+      <div class="award-modal__body"></div>`;
+  }
   return backdrop;
 }
 
@@ -645,8 +805,10 @@ document.querySelectorAll("[data-award]").forEach((button) => {
     const data = awardData[button.dataset.award];
     if (!data) return;
     const modal = ensureModal();
-    modal.querySelector("h3").textContent = data.title;
-    modal.querySelector("ul").innerHTML = data.items.map((item) => `<li>${item}</li>`).join("");
+    const panel = modal.querySelector(".award-modal");
+    const body = modal.querySelector(".award-modal__body");
+    panel.classList.toggle("award-modal--showcase", data.layout === "showcase");
+    body.innerHTML = renderAwardModalContent(data);
     modal.classList.add("show");
   });
 });
@@ -680,9 +842,9 @@ function renderAchievements() {
     const offset = (index - achievementIndex + achievementCards.length) % achievementCards.length;
     const positions = [
       { x: 0, scale: 1, opacity: 1, z: 5 },
-      { x: 52, scale: 0.92, opacity: 0.82, z: 4 },
-      { x: 96, scale: 0.84, opacity: 0.62, z: 3 },
-      { x: -48, scale: 0.86, opacity: 0.48, z: 2 }
+      { x: 34, scale: 0.94, opacity: 0.96, z: 4 },
+      { x: 64, scale: 0.9, opacity: 0.93, z: 3 },
+      { x: -30, scale: 0.92, opacity: 0.92, z: 2 }
     ];
     const pos = positions[offset];
     card.style.transform = `translateX(${pos.x}px) scale(${pos.scale})`;
@@ -728,4 +890,3 @@ if (achievementDots && achievementCards.length) {
   });
   renderAchievements();
 }
-
