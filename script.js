@@ -18,6 +18,7 @@ const messageText = document.querySelector("#messageText");
 const messageStatus = document.querySelector("#messageStatus");
 const messageSendBtn = document.querySelector(".message-send");
 const MESSAGE_API_URL = window.MESSAGE_API_URL || "/api/message";
+const DEFAULT_WECHAT_ID = "lock_061320";
 const cardOrder = ["ai", "product", "language", "analysis"];
 let activeCard = "ai";
 let wechatToastLayer = null;
@@ -382,7 +383,7 @@ messageForm?.addEventListener("submit", async (event) => {
 
     messageForm.reset();
     messageStatus.textContent = "";
-    showWechatToast(payload.wechatId);
+    showWechatToast(payload.wechatId || DEFAULT_WECHAT_ID);
   } catch (error) {
     messageStatus.textContent = error.message || "留言发送失败，请稍后重试";
     messageStatus.classList.add("error");
@@ -409,23 +410,25 @@ function hideWechatToast() {
 function showWechatToast(wechatId) {
   hideWechatToast();
 
-  const id = String(wechatId || "").trim();
+  const id = String(wechatId || DEFAULT_WECHAT_ID).trim();
   wechatToastLayer = document.createElement("div");
   wechatToastLayer.className = "wechat-toast-layer";
   wechatToastLayer.setAttribute("role", "dialog");
+  wechatToastLayer.setAttribute("aria-modal", "true");
   wechatToastLayer.setAttribute("aria-live", "polite");
   wechatToastLayer.innerHTML = `
     <div class="wechat-toast">
-      <p class="wechat-toast__title">留言已发送</p>
-      <p class="wechat-toast__desc">感谢你的留言，我会尽快查看邮箱回复。如需更快联系，欢迎添加我的微信。</p>
-      ${
-        id
-          ? `<div class="wechat-toast__row">
-              <span class="wechat-toast__id">${escapeHtml(id)}</span>
-              <button class="wechat-toast__copy" type="button">复制微信号</button>
-            </div>`
-          : ""
-      }
+      <button class="wechat-toast__close" type="button" aria-label="关闭微信联系卡">×</button>
+      <div class="wechat-toast__mark" aria-hidden="true">WX</div>
+      <p class="wechat-toast__eyebrow">留言已发送</p>
+      <h3 class="wechat-toast__title">微信联系卡</h3>
+      <p class="wechat-toast__desc">我会尽快查看留言。如果希望更快沟通，可以添加下面的微信号。</p>
+      <div class="wechat-toast__row">
+        <span class="wechat-toast__label">WeChat ID</span>
+        <span class="wechat-toast__id">${escapeHtml(id)}</span>
+      </div>
+      <button class="wechat-toast__copy" type="button">复制微信号</button>
+      <p class="wechat-toast__hint">添加时可以备注：来自个人网站留言板</p>
     </div>`;
 
   document.body.appendChild(wechatToastLayer);
@@ -437,20 +440,20 @@ function showWechatToast(wechatId) {
   copyBtn?.addEventListener("click", async () => {
     try {
       await navigator.clipboard.writeText(id);
-      copyBtn.textContent = "✅ 已复制";
+      copyBtn.textContent = "已复制";
       copyBtn.classList.add("is-copied");
     } catch {
       copyBtn.textContent = "请手动复制";
     }
   });
 
+  wechatToastLayer.querySelector(".wechat-toast__close")?.addEventListener("click", hideWechatToast);
+
   wechatToastLayer.addEventListener("click", (event) => {
     if (event.target === wechatToastLayer) {
       hideWechatToast();
     }
   });
-
-  wechatToastTimer = window.setTimeout(hideWechatToast, 5000);
 }
 
 function getNextCardKey(cardKey) {
