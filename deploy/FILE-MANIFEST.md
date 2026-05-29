@@ -92,7 +92,7 @@
 - **CareerMod 官网** (projects): https://www.careermod.cn/
 - **极因造物 · 展示视频（抖音）** (projects): https://www.douyin.com/jingxuan/search/%E6%9E%81%E5%9B%A0%E9%80%A0%E7%89%A9?aid=88101af6-1ad7-43c0-810f-e0cd398f296b&modal_id=7569066982960613041&type=general
 - **Github** (more): https://github.com/LauraLiu25
-- **小红书** (more): https://xhslink.com/m/16nbw2KqWT3
+- **小红书** (more): https://www.xiaohongshu.com/user/profile/5684f9e3b8c8b40b5fd84f76
 
 ## 联系方式
 

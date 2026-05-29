@@ -17,6 +17,7 @@ const messageEmail = document.querySelector("#messageEmail");
 const messageText = document.querySelector("#messageText");
 const messageStatus = document.querySelector("#messageStatus");
 const messageSendBtn = document.querySelector(".message-send");
+const contactCopyButtons = [...document.querySelectorAll(".contact-copy")];
 const MESSAGE_API_URL = window.MESSAGE_API_URL || "/api/message";
 const DEFAULT_WECHAT_ID = "lock_061320";
 const cardOrder = ["ai", "product", "language", "analysis"];
@@ -237,13 +238,22 @@ function closeMatchModal() {
 function renderMatchModal(data) {
   const modal = ensureMatchModal();
   const content = modal.querySelector("#matchModalContent");
+  const score = Math.max(0, Math.min(100, Math.round(Number(data.score) || 0)));
+  const summaryPoints = toListItems(data.summary, 3);
   const analysisHtml = data.analysis
     .map(
       (item) => `
         <article class="match-analysis-item">
-          <p class="match-analysis-item__text">${escapeHtml(item.text)}</p>
+          <div class="match-analysis-item__copy">
+            <h3>${escapeHtml(getAnalysisTitle(item))}</h3>
+            <ul>
+              ${toListItems(item.text, 2)
+                .map((point) => `<li>${escapeHtml(point)}</li>`)
+                .join("")}
+            </ul>
+          </div>
           <button class="match-analysis-item__btn" type="button" data-target="${escapeHtml(item.target)}">
-            ${escapeHtml(item.buttonText)} <span aria-hidden="true">→</span>
+            <span>${escapeHtml(item.buttonText)}</span><span aria-hidden="true">→</span>
           </button>
         </article>`
     )
@@ -251,14 +261,16 @@ function renderMatchModal(data) {
 
   content.innerHTML = `
     <header class="match-modal-head">
-      <div class="match-score" aria-label="匹配分数 ${data.score} 分">
-        <span class="match-score__value">${data.score}</span>
+      <div class="match-score" style="--score-percent: ${score}%;" aria-label="匹配分数 ${score} 分">
+        <span class="match-score__value">${score}</span>
         <span class="match-score__unit">分</span>
       </div>
       <div class="match-summary">
         <p class="match-modal-kicker">匹配分析 · For HR</p>
         <h2 id="matchModalTitle">岗位匹配结果</h2>
-        <p class="match-summary__text">${escapeHtml(data.summary)}</p>
+        <ul class="match-summary__list">
+          ${summaryPoints.map((point) => `<li>${escapeHtml(point)}</li>`).join("")}
+        </ul>
       </div>
     </header>
     <section class="match-analysis" aria-label="分项分析">
@@ -289,19 +301,41 @@ function renderMatchModalError(message) {
   const content = modal.querySelector("#matchModalContent");
   content.innerHTML = `
     <header class="match-modal-head match-modal-head--error">
+      <div class="match-score match-score--empty" style="--score-percent: 0%;" aria-label="等待粘贴职位描述">
+        <span class="match-score__value">--</span>
+        <span class="match-score__unit">分</span>
+      </div>
       <div class="match-summary">
         <p class="match-modal-kicker">匹配分析</p>
-        <h2 id="matchModalTitle">暂时无法完成匹配</h2>
+        <h2 id="matchModalTitle">岗位匹配结果</h2>
         <p class="match-summary__text">${escapeHtml(message)}</p>
       </div>
-    </header>
-    <section class="match-analysis">
-      <article class="match-analysis-item">
-        <p class="match-analysis-item__text">请确认 Cloudflare Pages 的 Variables and Secrets 已配置 <code>NEWAPI_API_KEY</code>，并且 <code>NEWAPI_MODEL</code> 是当前 API 平台支持的模型。</p>
-      </article>
-    </section>`;
+    </header>`;
   modal.classList.add("show");
   document.body.style.overflow = "hidden";
+}
+
+function toListItems(value, maxItems = 3) {
+  const text = String(value || "").trim();
+  if (!text) return [];
+  const parts = text
+    .split(/(?:[。！？!?；;]\s*|\n+|(?:^|\s)[-•]\s+)/)
+    .map((part) => part.trim().replace(/[。！？!?；;]$/, ""))
+    .filter(Boolean);
+
+  if (parts.length <= maxItems) return parts;
+  return parts.slice(0, maxItems - 1).concat(parts.slice(maxItems - 1).join("；"));
+}
+
+function getAnalysisTitle(item) {
+  const target = item?.target || "";
+  const text = `${item?.buttonText || ""} ${item?.text || ""}`;
+  if (target === "#projects" || /CareerMod|产品|项目|孵化|落地/.test(text)) return "产品孵化与落地";
+  if (target === "#about-skills" || /Python|SQL|Excel|Stata|数据|指标|可视化/.test(text)) return "数据分析与工具";
+  if (target === "#work-experience" || /运营|商业|管理|实习|工作/.test(text)) return "商业运营理解";
+  if (target === "#education" || /教育|竞赛|审计|财务|专业/.test(text)) return "专业训练基础";
+  if (/协同|沟通|推进|跨/.test(text)) return "跨模块协同";
+  return "核心能力匹配";
 }
 
 function escapeHtml(value) {
@@ -323,7 +357,7 @@ matcherForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const jd = jdInput.value.trim();
   if (jd.length < 20) {
-    renderMatchModalError("请粘贴更完整的职位描述（建议不少于 20 字），以便生成可靠匹配分析。");
+    renderMatchModalError("粘贴您的招聘职位描述");
     return;
   }
 
@@ -455,6 +489,26 @@ function showWechatToast(wechatId) {
     }
   });
 }
+
+contactCopyButtons.forEach((button) => {
+  button.addEventListener("click", async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const value = button.dataset.copyValue || "";
+    try {
+      await navigator.clipboard.writeText(value);
+      button.classList.add("is-copied");
+      button.setAttribute("aria-label", "已复制");
+      window.setTimeout(() => {
+        button.classList.remove("is-copied");
+        button.setAttribute("aria-label", value.includes("@") ? "复制邮箱" : "复制手机号");
+      }, 1400);
+    } catch {
+      button.setAttribute("aria-label", "复制失败，请手动复制");
+    }
+  });
+});
 
 function getNextCardKey(cardKey) {
   const nextIndex = (cardOrder.indexOf(cardKey) + 1) % cardOrder.length;
@@ -654,8 +708,13 @@ function syncEducationTimelineAxis() {
   if (bachelorCard && masterCard) {
     const bachelorRect = bachelorCard.getBoundingClientRect();
     const masterRect = masterCard.getBoundingClientRect();
+    const masterItem = timeline.querySelector('[data-node="master"]');
+    const masterDetail = masterItem?.querySelector(".master-detail");
+    const axisEndRect = masterItem?.classList.contains("is-open") && masterDetail
+      ? masterDetail.getBoundingClientRect()
+      : masterRect;
     const axisTop = bachelorRect.top - timelineRect.top;
-    const axisHeight = masterRect.bottom - bachelorRect.top;
+    const axisHeight = axisEndRect.bottom - bachelorRect.top;
     timeline.style.setProperty("--edu-axis-top", `${Math.max(0, axisTop)}px`);
     timeline.style.setProperty("--edu-axis-height", `${Math.max(0, axisHeight)}px`);
   }
