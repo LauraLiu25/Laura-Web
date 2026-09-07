@@ -1459,6 +1459,32 @@ textarea:focus-visible {
   margin-top: 0.7rem;
 }
 
+.logo-row-commerce {
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 1rem;
+}
+
+.commerce-skill-flow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+  margin-top: 0.9rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(246, 239, 228, 0.82);
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.commerce-skill-flow i {
+  width: 0.8rem;
+  height: 0.12rem;
+  border-radius: 999px;
+  background: rgba(56, 56, 56, 0.34);
+}
+
 .card-language .cert-grid {
   margin-top: 1.35rem;
 }
@@ -1651,6 +1677,15 @@ textarea:focus-visible {
   --work-card-block-gap: 20px;
 }
 
+.work-shell--compact {
+  gap: clamp(0.6rem, 1.15vh, 0.9rem);
+  --work-card-block-gap: clamp(0.6rem, 1.2vh, 0.9rem);
+}
+
+.work-section--commerce .work-overview {
+  margin-top: clamp(1rem, 2.4vh, 1.55rem);
+}
+
 .work-head {
   flex-shrink: 0;
   margin: 0;
@@ -1752,6 +1787,15 @@ textarea:focus-visible {
   display: grid;
   gap: clamp(0.85rem, 1.6vh, 1.1rem);
   padding-left: clamp(0.25rem, 0.8vw, 0.65rem);
+}
+
+.work-page-kicker {
+  margin: 0 0 -0.35rem;
+  color: var(--type-body-desc-color);
+  font-size: var(--type-body-desc-size);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .company-meta h3 {
@@ -1875,6 +1919,14 @@ textarea:focus-visible {
   align-content: end;
 }
 
+.work-tasks--text {
+  align-self: stretch;
+  align-content: start;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(0.68rem, 1.35vw, 1rem);
+  margin-top: clamp(0.7rem, 1.25vh, 1rem);
+}
+
 .work-task-card {
   min-width: 0;
   height: auto;
@@ -1888,6 +1940,229 @@ textarea:focus-visible {
   background: rgba(255, 255, 255, 0.78);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.work-task-card--text {
+  grid-template-rows: auto auto;
+  gap: clamp(0.5rem, 0.9vh, 0.72rem);
+  padding: clamp(0.58rem, 1vh, 0.74rem) clamp(0.66rem, 1.1vw, 0.9rem);
+}
+
+.work-task-card--text .work-task-card__head h4 {
+  align-items: flex-start;
+  font-size: clamp(1rem, 1.18vw, 1.18rem);
+  line-height: 1.22;
+}
+
+.work-task-card--text ul {
+  gap: 0.12em;
+  font-size: clamp(0.72rem, 0.78vw, 0.86rem);
+  line-height: 1.38;
+}
+
+.work-task-card--text li {
+  padding-left: 0.86rem;
+  line-height: 1.38;
+}
+
+.work-task-card--text li::before {
+  top: 0.58em;
+  width: 0.24rem;
+  height: 0.24rem;
+}
+
+.commerce-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.45rem);
+  align-self: stretch;
+  align-items: start;
+  margin-top: clamp(0.85rem, 1.5vh, 1.15rem);
+  padding-inline: var(--work-card-inline-pad);
+  box-sizing: border-box;
+}
+
+.commerce-focus-card {
+  min-width: 0;
+  border: 1px solid rgba(170, 160, 151, 0.26);
+  border-radius: 18px;
+  background:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.92), rgba(249, 246, 240, 0.74)),
+    rgba(255, 255, 255, 0.78);
+  box-shadow: 0 10px 26px rgba(26, 28, 32, 0.06);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.commerce-focus-card:hover,
+.commerce-focus-card[open] {
+  transform: translateY(-2px);
+  border-color: rgba(127, 116, 104, 0.36);
+  box-shadow: 0 18px 42px rgba(26, 28, 32, 0.09);
+}
+
+.commerce-focus-card summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.78rem;
+  align-items: start;
+  padding: clamp(0.88rem, 1.4vw, 1.1rem);
+  cursor: pointer;
+  list-style: none;
+}
+
+.commerce-focus-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.commerce-focus-card__index {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  background: rgba(31, 31, 31, 0.92);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.commerce-focus-card__copy {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.commerce-focus-card__copy strong {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 1.65vw, 1.65rem);
+  font-weight: 900;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.commerce-focus-card__copy em {
+  font-style: normal;
+  color: var(--type-body-desc-color);
+  font-size: clamp(0.82rem, 0.9vw, 0.95rem);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.commerce-focus-card__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  min-height: 1.8rem;
+  padding: 0.22rem 0.64rem;
+  border-radius: 999px;
+  background: rgba(86, 86, 86, 0.1);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.commerce-focus-card__toggle::after {
+  content: "+";
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.commerce-focus-card[open] .commerce-focus-card__toggle {
+  color: #fff;
+  background: var(--pill);
+}
+
+.commerce-focus-card[open] .commerce-focus-card__toggle::after {
+  content: "-";
+}
+
+.commerce-focus-card__brief {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.42rem;
+  padding: 0 clamp(0.88rem, 1.4vw, 1.1rem) clamp(0.9rem, 1.35vw, 1.08rem);
+}
+
+.commerce-focus-card__brief span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.9rem;
+  padding: 0.28rem 0.35rem;
+  border-radius: 0.48rem;
+  background: rgba(232, 226, 216, 0.72);
+  color: var(--ink);
+  font-size: clamp(0.72rem, 0.78vw, 0.84rem);
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.commerce-focus-card__detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  padding: 0 clamp(0.88rem, 1.4vw, 1.1rem) clamp(1rem, 1.6vw, 1.2rem);
+  animation: commerceDetailIn 0.22s ease both;
+}
+
+.commerce-focus-card__detail section {
+  display: grid;
+  gap: 0.34rem;
+  padding: 0.68rem 0.76rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(170, 160, 151, 0.18);
+}
+
+.commerce-focus-card__detail h5 {
+  margin: 0;
+  color: #7d725e;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.commerce-focus-card__detail ul {
+  display: grid;
+  gap: 0.22rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.commerce-focus-card__detail li {
+  position: relative;
+  padding-left: 0.85rem;
+  color: var(--ink);
+  font-size: clamp(0.8rem, 0.84vw, 0.92rem);
+  line-height: 1.45;
+}
+
+.commerce-focus-card__detail li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.26rem;
+  height: 0.26rem;
+  border-radius: 50%;
+  background: #8f877f;
+}
+
+@keyframes commerceDetailIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .work-task-card:hover {
@@ -2326,6 +2601,31 @@ textarea:focus-visible {
   max-height: var(--project-card-image-height);
   object-fit: contain;
   object-position: center;
+}
+
+.project-card__site-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem;
+  width: 100%;
+  height: 100%;
+  padding: 0.9rem;
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(243, 239, 231, 0.88)),
+    rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 0 0 1px rgba(165, 156, 146, 0.2);
+}
+
+.project-card__site-board span {
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(232, 226, 216, 0.72);
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .project-card__foot {
@@ -2911,6 +3211,10 @@ textarea:focus-visible {
   gap: 0.6rem;
 }
 
+.project-modal-gallery--site {
+  gap: 0.6rem;
+}
+
 .project-modal-gallery figure,
 .project-modal-figure {
   margin: 0;
@@ -2949,8 +3253,53 @@ textarea:focus-visible {
   object-position: center top;
 }
 
+.project-modal-gallery--site img {
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project-site-architecture {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-top: 0.35rem;
+}
+
+.project-site-architecture span {
+  display: grid;
+  place-items: center;
+  min-height: 3.2rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.85rem;
+  background: rgba(245, 241, 235, 0.95);
+  box-shadow: inset 0 0 0 1px rgba(168, 160, 150, 0.22);
+  color: var(--ink);
+  font-size: 0.94rem;
+  font-weight: 800;
+}
+
+.project-site-architecture--large {
+  gap: 0.7rem;
+  margin-top: 0.8rem;
+}
+
+.project-site-architecture--large span {
+  min-height: 3.8rem;
+  font-size: 1rem;
+}
+
 .project-modal-gallery:not(.project-modal-gallery--quad) img {
   max-height: min(36vh, 300px);
+}
+
+.project-process-steps--site {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-process-steps--site li {
+  min-height: 3.6rem;
 }
 
 .project-vibe-showcase {
@@ -6972,6 +7321,24 @@ textarea:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .work-tasks--text {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: start;
+  }
+
+  .commerce-focus-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .commerce-focus-card summary {
+    align-items: center;
+  }
+
+  .commerce-focus-card__detail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .work-task-card:last-child {
     grid-column: 1 / -1;
   }
@@ -7494,6 +7861,32 @@ textarea:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .work-tasks--text {
+    grid-template-columns: 1fr;
+  }
+
+  .commerce-focus-grid {
+    grid-template-columns: 1fr;
+    padding-inline: 1rem;
+  }
+
+  .commerce-focus-card summary {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .commerce-focus-card__toggle {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .commerce-focus-card__brief {
+    grid-template-columns: 1fr;
+  }
+
+  .commerce-focus-card__detail {
+    grid-template-columns: 1fr;
+  }
+
   .work-task-card:last-child {
     grid-column: auto;
   }
@@ -7502,6 +7895,14 @@ textarea:focus-visible {
     min-height: 0;
     height: auto;
     grid-template-rows: auto var(--work-task-image-height) auto;
+  }
+
+  .work-task-card--text {
+    grid-template-rows: auto auto;
+  }
+
+  .work-task-card--text ul {
+    font-size: var(--type-body-size);
   }
 
   .work-task-card__media img {

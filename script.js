@@ -24,6 +24,7 @@ const cardOrder = ["ai", "product", "language", "analysis"];
 let activeCard = "ai";
 let wechatToastLayer = null;
 let wechatToastTimer = null;
+const commerceFocusCards = [...document.querySelectorAll(".commerce-focus-card")];
 
 function scrollToSection(target, behavior = "smooth") {
   if (!target || !scrollContainer) return;
@@ -118,7 +119,7 @@ const observer = new IntersectionObserver(
       .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
     if (!visible) return;
-    const activeId = visible.target.id;
+    const activeId = visible.target.id === "work-audit" ? "work-experience" : visible.target.id;
     navLinks.forEach((link) => {
       link.classList.toggle("active", link.getAttribute("href") === `#${activeId}`);
     });
@@ -189,6 +190,15 @@ function closeProjectModal() {
 
 projectCards.forEach((card) => {
   card.addEventListener("click", () => openProjectModal(card.dataset.project));
+});
+
+commerceFocusCards.forEach((card) => {
+  card.addEventListener("toggle", () => {
+    if (!card.open) return;
+    commerceFocusCards.forEach((item) => {
+      if (item !== card) item.open = false;
+    });
+  });
 });
 
 function syncNavFromHash() {
