@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>刘红锁 | 个人简历</title>
-  <link rel="stylesheet" href="styles.css?v=20260908-work-gap-sync-1">
+  <link rel="stylesheet" href="styles.css?v=20260908-work-card-height-sync-1">
 </head>
 <body>
   <header class="site-header">
@@ -550,7 +550,7 @@
             </article>
             <article class="work-metric">
               <strong>1000+</strong>
-              <span class="work-metric__label">SKU 日</span>
+              <span class="work-metric__label">SKU</span>
               <em>全链路维护</em>
             </article>
             <article class="work-metric">
@@ -575,7 +575,7 @@
               <span>跨团队协同</span>
               <span>上新零失误</span>
             </div>
-            <span class="commerce-focus-card__media">
+            <span class="commerce-focus-card__media commerce-focus-card__media--product">
               <img src="images/vibe/01配图.png" alt="商品全链路运营配图">
             </span>
           </button>
@@ -593,7 +593,7 @@
               <span>价格台账</span>
               <span>资损拦截</span>
             </div>
-            <span class="commerce-focus-card__media">
+            <span class="commerce-focus-card__media commerce-focus-card__media--assistant">
               <img src="images/vibe/千牛上传助手.png" alt="千牛上传助手配图">
             </span>
           </button>
@@ -611,7 +611,7 @@
               <span>ROI 拆解</span>
               <span>投放优化</span>
             </div>
-            <span class="commerce-focus-card__media">
+            <span class="commerce-focus-card__media commerce-focus-card__media--data">
               <img src="images/vibe/03配图.png" alt="库存与经营数据优化配图">
             </span>
           </button>
@@ -637,7 +637,7 @@
               <div class="commerce-modal-metrics" aria-label="商品运营量化结果">
                 <span><strong>6</strong>家店铺</span>
                 <span><strong>200+</strong>新品</span>
-                <span><strong>1000+</strong>SKU 日</span>
+                <span><strong>1000+</strong>SKU</span>
               </div>
               <div class="commerce-modal-grid">
                 <section>
@@ -651,7 +651,7 @@
                 <section>
                   <h4>成果</h4>
                   <ul>
-                    <li>累计完成 200+ 新品、1000+ SKU 日任务。</li>
+                    <li>累计完成 200+ 新品、1000+ SKU 维护任务。</li>
                     <li>6 店同步操作零失误。</li>
                     <li>沉淀多店并行运营节奏。</li>
                   </ul>
@@ -670,7 +670,7 @@
               <p class="commerce-modal-lead">围绕批量操作与价格复核，提前拦截优惠叠加风险。</p>
               <div class="commerce-modal-metrics" aria-label="AI 提效与价格风控量化结果">
                 <span><strong>70%</strong>效率提升</span>
-                <span><strong>100+</strong>SKU 日复核</span>
+                <span><strong>100+</strong>SKU 复核</span>
                 <span><strong>7000+</strong>订单风险</span>
               </div>
               <div class="commerce-modal-grid">
@@ -822,20 +822,17 @@
 
         <div class="project-grid" role="list">
           <button class="project-card" type="button" data-project="vibe" style="--project-accent:#b6a6e8">
-            <span class="project-card__top">
+            <span class="project-card__heading">
               <span class="project-card__index">01</span>
+              <h3 class="project-card__title">个人网站</h3>
               <span class="project-card__icon project-card__icon--code" aria-hidden="true"></span>
             </span>
-            <h3 class="project-card__title">个人网站</h3>
             <p class="project-card__subtitle">模块化响应式个人网站</p>
             <p class="project-card__tags">
               <span>Web开发</span><span>信息架构</span><span>模块化设计</span>
             </p>
             <span class="project-card__media">
-              <span class="project-card__site-board" aria-hidden="true">
-                <span>首页</span><span>关于我</span><span>教育</span>
-                <span>工作</span><span>项目</span><span>更多</span>
-              </span>
+              <img src="images/vibe/卡片图.png" alt="个人网站项目卡片图">
             </span>
             <span class="project-card__foot">
               <span class="project-card__meta">
@@ -847,11 +844,11 @@
           </button>
 
           <button class="project-card" type="button" data-project="competition" style="--project-accent:#8eb5e8">
-            <span class="project-card__top">
+            <span class="project-card__heading">
               <span class="project-card__index">02</span>
+              <h3 class="project-card__title">极因造物 Aegle X</h3>
               <img class="project-card__icon" src="images/competition/card-icon.png" alt="">
             </span>
-            <h3 class="project-card__title">极因造物 Aegle X</h3>
             <p class="project-card__subtitle">探索AI与生命科学的交叉边界</p>
             <p class="project-card__tags">
               <span>创赛项目</span><span>商业模式</span><span>国一</span>
@@ -869,11 +866,11 @@
           </button>
 
           <button class="project-card" type="button" data-project="unitree" style="--project-accent:#9dceab">
-            <span class="project-card__top">
+            <span class="project-card__heading">
               <span class="project-card__index">03</span>
+              <h3 class="project-card__title">宇树科技案例开发</h3>
               <span class="project-card__icon project-card__icon--doc" aria-hidden="true"></span>
             </span>
-            <h3 class="project-card__title">宇树科技案例开发</h3>
             <p class="project-card__subtitle">从商业案例中理解具身智能</p>
             <p class="project-card__tags">
               <span>案例研究</span><span>具身智能</span><span>战略规划</span>
@@ -918,26 +915,13 @@
               <li>关于我与能力卡片承接个人定位</li>
               <li>教育、工作、项目与更多页面形成完整信息架构</li>
             </ul>
-            <div class="project-site-architecture" aria-label="个人网站六大模块示意">
-              <span>首页</span>
-              <span>关于我</span>
-              <span>教育</span>
-              <span>工作</span>
-              <span>项目</span>
-              <span>更多</span>
-            </div>
           </section>
           <section class="project-modal-block">
-            <h4>六大模块示意</h4>
-            <p>图示重点放在网站的六大模块与信息流关系，不逐页展示所有页面细节，用于体现完整的个人站点架构能力。</p>
-            <div class="project-site-architecture project-site-architecture--large" aria-label="个人网站六大模块示意">
-              <span>首页</span>
-              <span>关于我</span>
-              <span>教育</span>
-              <span>工作</span>
-              <span>项目</span>
-              <span>更多</span>
-            </div>
+            <h4>首页视觉与信息入口</h4>
+            <p>首页承担定位表达、简历预览、AI 岗位匹配和继续浏览四个入口，是招聘方进入网站后的第一判断界面。</p>
+            <figure class="project-modal-figure project-modal-figure--wide project-modal-figure--home">
+              <img src="images/vibe/首页.png" alt="个人网站首页截图">
+            </figure>
           </section>
           <section class="project-modal-block project-process-block">
             <h4>设计思路</h4>
@@ -1130,6 +1114,6 @@
     </section>
   </main>
 
-  <script src="script.js?v=20260908-work-gap-sync-1"></script>
+  <script src="script.js?v=20260908-work-card-height-sync-1"></script>
 </body>
 </html>
