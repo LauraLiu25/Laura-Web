@@ -25,6 +25,7 @@ let activeCard = "ai";
 let wechatToastLayer = null;
 let wechatToastTimer = null;
 const commerceFocusCards = [...document.querySelectorAll(".commerce-focus-card")];
+let commerceModalBackdrop = null;
 
 function scrollToSection(target, behavior = "smooth") {
   if (!target || !scrollContainer) return;
@@ -159,6 +160,10 @@ function ensureProjectModal() {
     }
     if (projectModalBackdrop?.classList.contains("show")) {
       closeProjectModal();
+      return;
+    }
+    if (commerceModalBackdrop?.classList.contains("show")) {
+      closeCommerceModal();
     }
   });
 
@@ -192,13 +197,59 @@ projectCards.forEach((card) => {
   card.addEventListener("click", () => openProjectModal(card.dataset.project));
 });
 
-commerceFocusCards.forEach((card) => {
-  card.addEventListener("toggle", () => {
-    if (!card.open) return;
-    commerceFocusCards.forEach((item) => {
-      if (item !== card) item.open = false;
-    });
+function ensureCommerceModal() {
+  if (commerceModalBackdrop) return commerceModalBackdrop;
+
+  commerceModalBackdrop = document.createElement("div");
+  commerceModalBackdrop.className = "commerce-modal-backdrop";
+  commerceModalBackdrop.innerHTML = `
+    <div class="commerce-modal" role="dialog" aria-modal="true" aria-labelledby="commerceModalTitle">
+      <button class="commerce-modal-close" type="button" aria-label="关闭">×</button>
+      <div class="commerce-modal-content"></div>
+    </div>`;
+  document.body.appendChild(commerceModalBackdrop);
+
+  commerceModalBackdrop.addEventListener("click", (event) => {
+    if (event.target === commerceModalBackdrop || event.target.closest(".commerce-modal-close")) {
+      closeCommerceModal();
+    }
   });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    if (commerceModalBackdrop?.classList.contains("show")) {
+      closeCommerceModal();
+    }
+  });
+
+  return commerceModalBackdrop;
+}
+
+function openCommerceModal(commerceKey) {
+  const template = document.getElementById(`commerce-detail-${commerceKey}`);
+  if (!template) return;
+
+  const modal = ensureCommerceModal();
+  const content = modal.querySelector(".commerce-modal-content");
+  const panel = modal.querySelector(".commerce-modal");
+  const accent = template.dataset.accent || "#5f8f78";
+  content.innerHTML = "";
+  content.appendChild(template.cloneNode(true));
+  panel?.style.setProperty("--commerce-modal-accent", accent);
+  content.querySelector("h3")?.setAttribute("id", "commerceModalTitle");
+  modal.classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function closeCommerceModal() {
+  if (!commerceModalBackdrop) return;
+  commerceModalBackdrop.classList.remove("show");
+  document.body.style.overflow = "";
+  commerceModalBackdrop.querySelector(".commerce-modal-content").innerHTML = "";
+}
+
+commerceFocusCards.forEach((card) => {
+  card.addEventListener("click", () => openCommerceModal(card.dataset.commerceModal));
 });
 
 function syncNavFromHash() {

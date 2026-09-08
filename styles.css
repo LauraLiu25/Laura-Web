@@ -1675,6 +1675,7 @@ textarea:focus-visible {
   --work-task-image-height: clamp(130px, calc(15.5vh + 30px), 162px);
   --work-card-inline-pad: 38px;
   --work-card-block-gap: 20px;
+  --work-experience-card-gap: clamp(1rem, 2.2vh, 1.6rem);
 }
 
 .work-shell--compact {
@@ -1683,7 +1684,7 @@ textarea:focus-visible {
 }
 
 .work-section--commerce .work-overview {
-  margin-top: clamp(1rem, 2.4vh, 1.55rem);
+  margin-top: clamp(1.35rem, 3.1vh, 2.1rem);
 }
 
 .work-head {
@@ -1816,6 +1817,13 @@ textarea:focus-visible {
   min-width: 0;
 }
 
+.company-info--inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 1.05rem;
+}
+
 .work-date,
 .work-role {
   position: relative;
@@ -1838,9 +1846,9 @@ textarea:focus-visible {
   display: inline-grid;
   place-items: center;
   flex: 0 0 auto;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.38rem;
+  width: 1.72rem;
+  height: 1.72rem;
+  border-radius: 0.52rem;
   border: 2px solid rgba(64, 78, 96, 0.85);
   color: transparent;
 }
@@ -1857,12 +1865,10 @@ textarea:focus-visible {
 .work-role::before {
   content: "";
   border-color: rgba(48, 61, 80, 0.9);
-  border-radius: 0.5rem 0.5rem 0.75rem 0.75rem;
+  border-radius: 999px;
   background:
-    linear-gradient(rgba(48, 61, 80, 0.75), rgba(48, 61, 80, 0.75)) 50% 35% / 58% 3px no-repeat,
-    linear-gradient(rgba(48, 61, 80, 0.45), rgba(48, 61, 80, 0.45)) 50% 57% / 58% 3px no-repeat,
-    linear-gradient(rgba(48, 61, 80, 0.45), rgba(48, 61, 80, 0.45)) 50% 76% / 58% 3px no-repeat;
-  transform: rotate(13deg);
+    radial-gradient(circle at 50% 34%, rgba(48, 61, 80, 0.95) 0 2.7px, transparent 2.8px),
+    linear-gradient(rgba(48, 61, 80, 0.6), rgba(48, 61, 80, 0.6)) 50% 66% / 58% 3px no-repeat;
 }
 
 .work-metrics {
@@ -1911,12 +1917,12 @@ textarea:focus-visible {
   gap: clamp(0.85rem, 1.8vw, 1.35rem);
   min-height: 0;
   height: auto;
-  margin-top: var(--work-card-block-gap);
+  margin-top: var(--work-experience-card-gap);
   padding-inline: var(--work-card-inline-pad);
   box-sizing: border-box;
-  align-self: end;
+  align-self: stretch;
   align-items: stretch;
-  align-content: end;
+  align-content: start;
 }
 
 .work-tasks--text {
@@ -1977,13 +1983,21 @@ textarea:focus-visible {
   gap: clamp(1rem, 2vw, 1.45rem);
   align-self: stretch;
   align-items: start;
-  margin-top: clamp(0.85rem, 1.5vh, 1.15rem);
+  margin-top: var(--work-experience-card-gap);
   padding-inline: var(--work-card-inline-pad);
   box-sizing: border-box;
 }
 
 .commerce-focus-card {
   min-width: 0;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 0.4rem;
+  min-height: clamp(404px, 46vh, 520px);
+  padding: 0;
+  text-align: left;
+  appearance: none;
+  cursor: pointer;
   border: 1px solid rgba(170, 160, 151, 0.26);
   border-radius: 18px;
   background:
@@ -1991,63 +2005,62 @@ textarea:focus-visible {
     rgba(255, 255, 255, 0.78);
   box-shadow: 0 10px 26px rgba(26, 28, 32, 0.06);
   overflow: hidden;
+  font: inherit;
+  color: inherit;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .commerce-focus-card:hover,
-.commerce-focus-card[open] {
+.commerce-focus-card:focus-visible {
   transform: translateY(-2px);
   border-color: rgba(127, 116, 104, 0.36);
   box-shadow: 0 18px 42px rgba(26, 28, 32, 0.09);
+  outline: none;
 }
 
-.commerce-focus-card summary {
+.commerce-focus-card__media {
+  display: block;
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(235, 231, 224, 0.55);
+}
+
+.commerce-focus-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform 0.28s ease;
+}
+
+.commerce-focus-card:hover .commerce-focus-card__media img,
+.commerce-focus-card:focus-visible .commerce-focus-card__media img {
+  transform: scale(1.045);
+}
+
+.commerce-focus-card__summary {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   gap: 0.78rem;
-  align-items: start;
-  padding: clamp(0.88rem, 1.4vw, 1.1rem);
-  cursor: pointer;
-  list-style: none;
-}
-
-.commerce-focus-card summary::-webkit-details-marker {
-  display: none;
-}
-
-.commerce-focus-card__index {
-  display: grid;
-  place-items: center;
-  width: 2.35rem;
-  height: 2.35rem;
-  border-radius: 50%;
-  background: rgba(31, 31, 31, 0.92);
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: 900;
-  line-height: 1;
+  align-items: center;
+  padding: clamp(0.82rem, 1.25vw, 1rem) clamp(0.88rem, 1.4vw, 1.1rem) 0;
 }
 
 .commerce-focus-card__copy {
   display: grid;
-  gap: 0.35rem;
+  align-items: center;
   min-width: 0;
 }
 
 .commerce-focus-card__copy strong {
   font-family: var(--font-serif);
-  font-size: clamp(1.25rem, 1.65vw, 1.65rem);
+  font-size: clamp(1rem, 1.18vw, 1.18rem);
   font-weight: 900;
-  line-height: 1.15;
+  line-height: 1.22;
   color: var(--ink);
-}
-
-.commerce-focus-card__copy em {
-  font-style: normal;
-  color: var(--type-body-desc-color);
-  font-size: clamp(0.82rem, 0.9vw, 0.95rem);
-  font-weight: 500;
-  line-height: 1.5;
+  white-space: nowrap;
 }
 
 .commerce-focus-card__toggle {
@@ -2070,20 +2083,17 @@ textarea:focus-visible {
   line-height: 1;
 }
 
-.commerce-focus-card[open] .commerce-focus-card__toggle {
+.commerce-focus-card:hover .commerce-focus-card__toggle,
+.commerce-focus-card:focus-visible .commerce-focus-card__toggle {
   color: #fff;
   background: var(--pill);
-}
-
-.commerce-focus-card[open] .commerce-focus-card__toggle::after {
-  content: "-";
 }
 
 .commerce-focus-card__brief {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.42rem;
-  padding: 0 clamp(0.88rem, 1.4vw, 1.1rem) clamp(0.9rem, 1.35vw, 1.08rem);
+  padding: 0 clamp(0.88rem, 1.4vw, 1.1rem) 0;
 }
 
 .commerce-focus-card__brief span {
@@ -2101,32 +2111,194 @@ textarea:focus-visible {
   text-align: center;
 }
 
-.commerce-focus-card__detail {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.6rem;
-  padding: 0 clamp(0.88rem, 1.4vw, 1.1rem) clamp(1rem, 1.6vw, 1.2rem);
-  animation: commerceDetailIn 0.22s ease both;
+.commerce-focus-card__media {
+  margin: 0 clamp(0.88rem, 1.4vw, 1.1rem) clamp(0.88rem, 1.35vw, 1rem);
+  border-radius: 0.8rem;
+  box-shadow: inset 0 0 0 1px rgba(170, 160, 151, 0.18);
 }
 
-.commerce-focus-card__detail section {
+.commerce-focus-card__media img {
+  border-radius: inherit;
+}
+
+.commerce-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 112;
+  display: none;
+  place-items: center;
+  padding: 1.25rem;
+  background: rgba(18, 20, 22, 0.52);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.commerce-modal-backdrop.show {
+  display: grid;
+}
+
+.commerce-modal {
+  position: relative;
+  width: min(94vw, 980px);
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background:
+    radial-gradient(circle at 18% 0%, color-mix(in srgb, var(--commerce-modal-accent, #5f8f78) 20%, transparent), transparent 36%),
+    linear-gradient(150deg, rgba(255, 255, 255, 0.98), rgba(249, 246, 240, 0.96));
+  box-shadow: 0 30px 96px rgba(0, 0, 0, 0.25);
+}
+
+.commerce-modal-close {
+  position: sticky;
+  top: 0.85rem;
+  z-index: 3;
+  float: right;
+  margin: 0.85rem 0.95rem 0 0.5rem;
+  width: 2.28rem;
+  height: 2.28rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--ink);
+  font-size: 1.45rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(30, 30, 30, 0.12);
+}
+
+.commerce-detail-article {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.86fr) minmax(0, 1.14fr);
+  gap: clamp(1rem, 2.5vw, 2rem);
+  padding: clamp(1rem, 2vw, 1.55rem);
+}
+
+.commerce-modal-media {
+  align-self: stretch;
+  min-height: 100%;
+  margin: 0;
+  border-radius: 0.9rem;
+  overflow: hidden;
+  background: rgba(235, 231, 224, 0.55);
+  box-shadow: inset 0 0 0 1px rgba(170, 160, 151, 0.2);
+}
+
+.commerce-modal-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 25rem;
+  object-fit: cover;
+}
+
+.commerce-modal-copy {
+  display: grid;
+  align-content: start;
+  gap: 0.78rem;
+  min-width: 0;
+  padding: clamp(0.35rem, 1vw, 0.65rem) clamp(0.2rem, 1vw, 0.6rem) clamp(0.6rem, 1.4vw, 1rem) 0;
+}
+
+.commerce-modal-kicker {
+  margin: 0;
+  color: color-mix(in srgb, var(--commerce-modal-accent, #5f8f78) 70%, #3a3a3a);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.commerce-modal-copy h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.commerce-modal-lead {
+  margin: 0;
+  max-width: 38rem;
+  color: var(--type-body-desc-color);
+  font-size: clamp(0.95rem, 1vw, 1.06rem);
+  line-height: 1.75;
+}
+
+.commerce-modal-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+}
+
+.commerce-modal-pills span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.32rem 0.68rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--commerce-modal-accent, #5f8f78) 13%, #fff);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1.2;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--commerce-modal-accent, #5f8f78) 28%, rgba(178, 169, 159, 0.35));
+}
+
+.commerce-modal-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.52rem;
+}
+
+.commerce-modal-metrics span {
+  display: grid;
+  gap: 0.08rem;
+  min-height: 4.65rem;
+  align-content: center;
+  padding: 0.58rem 0.45rem;
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--commerce-modal-accent, #5f8f78) 12%, #fff);
+  color: var(--ink);
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.25;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--commerce-modal-accent, #5f8f78) 26%, transparent);
+}
+
+.commerce-modal-metrics strong {
+  font-size: clamp(1.42rem, 2.5vw, 2rem);
+  line-height: 1;
+}
+
+.commerce-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.72rem;
+}
+
+.commerce-modal-grid section {
   display: grid;
   gap: 0.34rem;
-  padding: 0.68rem 0.76rem;
+  align-content: start;
+  padding: 0.82rem 0.92rem;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.72);
   box-shadow: inset 0 0 0 1px rgba(170, 160, 151, 0.18);
 }
 
-.commerce-focus-card__detail h5 {
+.commerce-modal-grid h4 {
   margin: 0;
-  color: #7d725e;
+  color: color-mix(in srgb, var(--commerce-modal-accent, #5f8f78) 70%, #3d3d3d);
   font-size: 0.78rem;
   font-weight: 900;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
 }
 
-.commerce-focus-card__detail ul {
+.commerce-modal-grid ul {
   display: grid;
   gap: 0.22rem;
   margin: 0;
@@ -2134,7 +2306,7 @@ textarea:focus-visible {
   list-style: none;
 }
 
-.commerce-focus-card__detail li {
+.commerce-modal-grid li {
   position: relative;
   padding-left: 0.85rem;
   color: var(--ink);
@@ -2142,7 +2314,7 @@ textarea:focus-visible {
   line-height: 1.45;
 }
 
-.commerce-focus-card__detail li::before {
+.commerce-modal-grid li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -2150,7 +2322,7 @@ textarea:focus-visible {
   width: 0.26rem;
   height: 0.26rem;
   border-radius: 50%;
-  background: #8f877f;
+  background: color-mix(in srgb, var(--commerce-modal-accent, #5f8f78) 68%, #8f877f);
 }
 
 @keyframes commerceDetailIn {
@@ -2180,18 +2352,41 @@ textarea:focus-visible {
 .work-task-card__head h4 {
   margin: 0;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.35rem;
-  font-size: var(--type-h2-size);
+  font-size: clamp(1rem, 1.18vw, 1.18rem);
   font-family: var(--font-serif);
   font-weight: 900;
   color: var(--ink);
-  line-height: 1.25;
+  line-height: 1.22;
 }
 
 .work-task-card__num {
-  font-size: 0.9em;
-  color: var(--hero-kicker-color);
+  display: inline-grid;
+  place-items: center;
+  width: 2.18rem;
+  height: 2.18rem;
+  margin-right: 0.08rem;
+  border-radius: 50%;
+  background: rgba(31, 31, 31, 0.92);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 900;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+.commerce-focus-card__index {
+  display: inline-grid;
+  place-items: center;
+  width: 2.18rem;
+  height: 2.18rem;
+  border-radius: 50%;
+  background: rgba(31, 31, 31, 0.92);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 900;
+  line-height: 1;
 }
 
 .work-task-card__ext {
@@ -7306,7 +7501,7 @@ textarea:focus-visible {
     max-height: 84px;
   }
 
-  .company-info {
+  .company-info:not(.company-info--inline) {
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 0.72rem;
@@ -7331,12 +7526,20 @@ textarea:focus-visible {
     gap: 0.8rem;
   }
 
-  .commerce-focus-card summary {
+  .commerce-focus-card {
+    min-height: 0;
+  }
+
+  .commerce-focus-card__summary {
     align-items: center;
   }
 
-  .commerce-focus-card__detail {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .commerce-detail-article {
+    grid-template-columns: 1fr;
+  }
+
+  .commerce-modal-media img {
+    min-height: 15rem;
   }
 
   .work-task-card:last-child {
@@ -7870,7 +8073,7 @@ textarea:focus-visible {
     padding-inline: 1rem;
   }
 
-  .commerce-focus-card summary {
+  .commerce-focus-card__summary {
     grid-template-columns: auto minmax(0, 1fr);
   }
 
@@ -7883,7 +8086,15 @@ textarea:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .commerce-focus-card__detail {
+  .commerce-focus-card__media {
+    margin-inline: 1rem;
+  }
+
+  .commerce-modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .commerce-modal-metrics {
     grid-template-columns: 1fr;
   }
 
