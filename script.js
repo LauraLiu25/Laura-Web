@@ -120,7 +120,9 @@ const observer = new IntersectionObserver(
       .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
     if (!visible) return;
-    const activeId = visible.target.id === "work-audit" ? "work-experience" : visible.target.id;
+    const activeId = ["work-audit", "work-meituan"].includes(visible.target.id)
+      ? "work-experience"
+      : visible.target.id;
     navLinks.forEach((link) => {
       link.classList.toggle("active", link.getAttribute("href") === `#${activeId}`);
     });

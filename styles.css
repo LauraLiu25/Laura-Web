@@ -1989,6 +1989,33 @@ textarea:focus-visible {
   box-sizing: border-box;
 }
 
+.meituan-company-sub {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.9rem;
+  color: var(--type-body-desc-color);
+  font-size: 0.9rem;
+}
+
+.meituan-company-sub img {
+  width: 76px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.work-section--meituan .company-meta { gap: 0.55rem; }
+.work-section--meituan .work-role { white-space: normal; }
+.work-section--meituan .commerce-focus-card__media { background: #f3f3e9; }
+.work-section--meituan .commerce-focus-card__media img,
+.work-section--meituan .commerce-focus-card:hover .commerce-focus-card__media img,
+.work-section--meituan .commerce-focus-card:focus-visible .commerce-focus-card__media img {
+  object-fit: cover;
+  transform: none;
+}
+.meituan-detail .commerce-modal-media { background: #f3f3e9; }
+.meituan-detail .commerce-modal-media img { object-fit: contain; }
+
 .commerce-focus-card {
   min-width: 0;
   display: grid;
